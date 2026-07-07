@@ -9,6 +9,9 @@ async function main() {
         let { puestos, error } = await supabase
             .from("vista_lista_actual")
             .select("*");
+        console.log(puestos);
+        console.log(typeof puestos);
+        console.log(Array.isArray(puestos));
         content.appendChild(await galleryRenderer.asCardGallery(puestos));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
