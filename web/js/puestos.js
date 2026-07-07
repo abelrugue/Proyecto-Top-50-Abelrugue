@@ -6,13 +6,13 @@ async function main() {
     try {
         let content = document.getElementById("content");
 
-        let { puestos, error } = await supabase
+        let { data, error } = await supabase
             .from("vista_lista_actual")
             .select("*");
-        console.log(puestos);
-        console.log(typeof puestos);
-        console.log(Array.isArray(puestos));
-        content.appendChild(await galleryRenderer.asCardGallery(puestos));
+        console.log(data);
+        console.log(typeof data);
+        console.log(Array.isArray(data));
+        content.appendChild(galleryRenderer.asCardGallery(data));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
     }
