@@ -8,7 +8,7 @@ async function main() {
 
         let { puestos, error } = await supabase
             .from("vista_lista_actual")
-            .select("*")
+            .select("*");
         content.appendChild(await galleryRenderer.asCardGallery(puestos));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
