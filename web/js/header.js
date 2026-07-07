@@ -3,9 +3,11 @@
 import { sessionManager } from "/js/utils/session.js";
 
 function main(){
+    /*
     showUser();
     addLogoutHandler();
     hideHeaderOptions();
+    */
 }
 
 
