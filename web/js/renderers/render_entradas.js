@@ -4,8 +4,7 @@ import { supabase } from "../supabase.js";
 
 const cancionRenderer = {
     asCard: function (cancion) {
-        let html = `<thead>
-<tr>
+        let html = `<tr>
 <td scope="col">${cancion.titulo}</td>
 <td scope="col">${cancion.artistas}</td>
 <td scope="col">${cancion.peak}</td>
@@ -18,8 +17,7 @@ const cancionRenderer = {
 <td scope="col">${cancion.fecha_peak}</td>
 
 
-</tr>
-</thead>`;
+</tr>`;
         return html;
     },
 
