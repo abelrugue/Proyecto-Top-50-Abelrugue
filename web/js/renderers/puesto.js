@@ -1,7 +1,7 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
 const puestoRenderer = {
-    asCard: function (puesto) {
+    asCard: function (puesto, hitos) {
         let fa = null;
         let mas = "";
         let variacion = "";
@@ -21,12 +21,23 @@ const puestoRenderer = {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
         }
 
+        let hito = "";
+        if(hitos.smf_posicion == puesto.posicion){
+            hito = `"<span class="badge badge-success">SMF</span>"`;
+        }else if(hitos.bmf_posicion == puesto.posicion){
+            hito = `"<span class="badge badge-danger">BMF</span>"`;
+        }else if(hitos.emf_posicion == puesto.posicion){
+            hito = `"<span class="badge badge-warning">EMF</span>"`;
+        }
+
+
+
         let html = `
 <div class="card mb-3">
 <div class="row m-0">
 <div class="col-md-4">
 <h1 class="card-title">${puesto.posicion}</h1>
-<h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion} ${hito}</h4>
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">

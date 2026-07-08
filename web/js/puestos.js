@@ -9,7 +9,10 @@ async function main() {
         let { data, error } = await supabase
             .from("vista_lista_actual")
             .select("*");
-        content.appendChild(galleryRenderer.asCardGallery(data));
+        let { data: hitos, error: error2 } = await supabase
+            .from("vista_hitos_semana")
+            .select("*");
+        content.appendChild(galleryRenderer.asCardGallery(data, hitos));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
     }
