@@ -32,10 +32,15 @@ const cancionRenderer = {
     },
 
     asCardGallery: async function () {
+
+        let inputname = document.getElementById("name-input");
+
+        
+
         let { data, error } = await supabase
                     .from("vista_artista_canciones")
                     .select("*")
-                    .eq("nombre", "Beret")
+                    .eq("nombre", inputname.value)
                     .order("fecha_debut");
         let html = '';
         for (let cancion of data) {

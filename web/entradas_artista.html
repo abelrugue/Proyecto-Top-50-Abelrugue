@@ -9,10 +9,10 @@
     <script src="/js/utils/include.js"></script>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
-    
+
     <script src="/js/entradas_artista.js" type="module"></script>
     <script src="/js/header.js" type="module"></script>
 </head>
@@ -23,6 +23,28 @@
         <div id="errors"></div>
         <h3 class="text-center">Entradas de X</h3>
         <hr>
+
+
+
+
+        <form id="team-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="name-input">Name</label>
+                    <input type="text" class="form-control" id="name-input" name="name" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="submit" id="btn" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+
+        
+
+
         <table class="table">
             <thead>
                 <tr>
