@@ -17,7 +17,7 @@ const puestoRenderer = {
             variacion = puesto.variacion;
             mas = "+";
         }else if (puesto.es_entrada){
-            fa = `<i class="fa-regular fa-circle-n" style="color: rgb(255, 200, 0);"></i>`;
+            fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(183, 146, 0);"></i>`;
         }
 
         let html = `
