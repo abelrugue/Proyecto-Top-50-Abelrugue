@@ -1,6 +1,6 @@
 "use strict";
 
-import { supabase } from "/js/supabase.js";
+import { supabase } from "../supabase.js";
 
 const cancionRenderer = {
     asCard: function (cancion) {
