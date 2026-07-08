@@ -14,7 +14,7 @@ const cancionRenderer = {
             num1=`style="background-color: rgb(255, 60, 60);"`;
         }
 
-        let html = `<tr>
+        let html = `<tr ${num1}>
 <td scope="col">${cancion.titulo}</td>
 <td scope="col" class="max-cell">${cancion.artistas}</td>
 <td scope="col">${cancion.peak}</td>
