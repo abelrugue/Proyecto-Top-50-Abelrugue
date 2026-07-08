@@ -52,7 +52,7 @@ const puestoRenderer = {
 
         let num1= "";
         if(puesto.es_numero_1){
-            num1=`style="color: rgb(255, 176, 176);"`;
+            num1=`style="background-color: rgb(255, 176, 176);"`;
         }
 
         
@@ -61,7 +61,7 @@ const puestoRenderer = {
 <div class="card mb-3" ${num1}>
 <div class="row m-0">
 <div class="col-md-2" >
-<h1 class="card-title" ${color_num}>${puesto.posicion}</h1>
+<h1 class="card-title" >${puesto.posicion}</h1>
 <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
 <h4 class="card-text">${hito}</h4>
 <h4 class="card-text">${hito_rdp}</h4>
@@ -80,7 +80,7 @@ const puestoRenderer = {
 <div class="d-flex justify-content-end gap-4 text-center align-items-center">
 <div>
 <p class="mb-1">Max:</p>
-<p><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
+<p ${color_num}><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
 </div>
 <div>
 <p class="mb-1">Sem:</p>
