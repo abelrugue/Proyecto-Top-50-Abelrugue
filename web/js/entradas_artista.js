@@ -43,6 +43,7 @@ async function asCardGallery() {
     }
 
 
+    document.getElementById("title-entradas-de-x").innerHTML = `Entradas de ${inputname.value}`;
 
     bodyDiv.innerHTML = html;
 
