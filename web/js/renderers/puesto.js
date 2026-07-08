@@ -5,18 +5,20 @@ const puestoRenderer = {
         let fa = null;
         let mas = "";
         let variacion = "";
-        if(puesto.variacion==null){
+        console.log(puesto.es_entrada);
+        console.log(typeof puesto.es_entrada);
+        if (puesto.variacion == null) {
             fa = `<i class="fa-solid fa-circle-n" style="color: rgb(255, 200, 0);"></i>`;
-        }else if(puesto.variacion<0){
+        } else if (puesto.variacion < 0) {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
             variacion = puesto.variacion;
-        }else if(puesto.variacion==0){
+        } else if (puesto.variacion == 0) {
             fa = `<i class="fa-solid fa-equals fa-width-auto" style="color: rgb(138, 138, 138);"></i>`;
-        }else if(puesto.variacion>0){
+        } else if (puesto.variacion > 0) {
             fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(29, 183, 0);"></i>`;
             variacion = puesto.variacion;
             mas = "+";
-        }else if (puesto.es_entrada){
+        } else if (puesto.es_entrada) {
             fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(183, 146, 0);"></i>`;
         }
 
@@ -52,7 +54,7 @@ const puestoRenderer = {
 </div>
 </div>`;
         let card = parseHTML(html);
-        
+
         return card;
     },
 };
