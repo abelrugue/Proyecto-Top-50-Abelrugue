@@ -47,12 +47,12 @@ const puestoRenderer = {
 
         let color_num= "";
         if(puesto.es_nuevo_peak){
-            color_num=`style="color: rgb(255, 213, 0);"`;
+            color_num=`style="color: rgb(255, 170, 0);"`;
         }
 
         let num1= "";
         if(puesto.es_numero_1){
-            num1=`style="background-color: rgb(255, 176, 176);"`;
+            num1=`style="background-color: rgb(255, 236, 236);"`;
         }
 
         
