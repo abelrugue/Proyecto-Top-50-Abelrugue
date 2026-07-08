@@ -27,7 +27,7 @@ const puestoRenderer = {
 <div class="col-md-1>
 <p class="card-text">Ant:</p>
 <p class="card-text"><i class="fa-solid fa-clock"></i>${puesto.posicion_anterior}</p>
-
+</div>
 </div>
 </div>`;
         let card = parseHTML(html);
