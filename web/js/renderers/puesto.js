@@ -21,11 +21,8 @@ const puestoRenderer = {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
         }
 
-        console.log(puesto.posicion)
-        console.log(hitos.smf_posicion);
         let hito = "";
         if(hitos.smf_posicion == puesto.posicion){
-            console.log("entré aquí, puesto ", hitos.smf_posicion);
             hito = `<span class="badge badge-success">SMF</span>`;
         }else if(hitos.bmf_posicion == puesto.posicion){
             hito = `<span class="badge badge-danger">BMF</span>`;
@@ -40,7 +37,7 @@ const puestoRenderer = {
 <div class="row m-0">
 <div class="col-md-4">
 <h1 class="card-title">${puesto.posicion}</h1>
-<h4 class="card-text" ${color}>${fa} ${mas}${variacion} ${hito}</h4>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4> ${hito}
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
