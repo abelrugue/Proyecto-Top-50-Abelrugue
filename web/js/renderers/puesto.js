@@ -1,7 +1,7 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
 const puestoRenderer = {
-    asCard: function (puesto, hitos) {
+    asCard: function (puesto, hitos, rdps) {
         let fa = null;
         let mas = "";
         let variacion = "";
@@ -30,6 +30,16 @@ const puestoRenderer = {
             hito = `<span class="badge rounded-pill bg-warning">EMF</span>`;
         }
 
+        let array = [];
+        for (let rdp of rdps) {
+            array.push(rdp.posicion);
+        }
+
+        let hito_rdp = "";
+        if (array.includes(puesto.posicion)) {
+            hito_rdp = `<span class="badge rounded-pill bg-info">RDP</span>`;
+        }
+
 
         
 
@@ -40,6 +50,7 @@ const puestoRenderer = {
 <h1 class="card-title">${puesto.posicion}</h1>
 <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
 <h4 class="card-text">${hito}</h4>
+<h4 class="card-text">${hito_rdp}</h4>
 </div>
 <div class="col-md-2">
 <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100">

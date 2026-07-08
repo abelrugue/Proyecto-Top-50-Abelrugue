@@ -13,7 +13,10 @@ async function main() {
             .from("vista_hitos_semana")
             .select("*")
             .single();
-        content.appendChild(galleryRenderer.asCardGallery(data, hitos));
+        let { data: rdps, error: error3 } = await supabase
+            .from("vista_record_permanencia")
+            .select("*")
+        content.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
     }
