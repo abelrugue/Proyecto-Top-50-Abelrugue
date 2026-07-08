@@ -22,15 +22,18 @@ const puestoRenderer = {
         }
 
         let hito = "";
-        if(hitos.smf_posicion == puesto.posicion){
-            hito = `<span class="badge badge-success">SMF</span>`;
-        }else if(hitos.bmf_posicion == puesto.posicion){
-            hito = `<span class="badge badge-danger">BMF</span>`;
-        }else if(hitos.emf_posicion == puesto.posicion){
-            hito = `<span class="badge badge-warning">EMF</span>`;
+        if (hitos.smf_posicion == puesto.posicion) {
+            hito = `<span class="badge bg-success">SMF</span>`;
+        } else if (hitos.bmf_posicion == puesto.posicion) {
+            hito = `<span class="badge bg-danger">BMF</span>`;
+        } else if (hitos.emf_posicion == puesto.posicion) {
+            hito = `<span class="badge bg-warning">EMF</span>`;
         }
 
 
+        console.log(hito);
+        console.log(hitos.smf_posicion, typeof hitos.smf_posicion);
+        console.log(puesto.posicion, typeof puesto.posicion);
 
         let html = `
 <div class="card mb-3">
