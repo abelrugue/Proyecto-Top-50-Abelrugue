@@ -21,6 +21,7 @@ const puestoRenderer = {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
         }
 
+        console.log(puesto.posicion)
         console.log(hitos.smf_posicion);
         let hito = "";
         if(hitos.smf_posicion == puesto.posicion){
