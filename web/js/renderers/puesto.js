@@ -38,10 +38,11 @@ const puestoRenderer = {
 <div class="row m-0">
 <div class="col-md-2">
 <h1 class="card-title">${puesto.posicion}</h1>
-<h4 class="card-text" ${color}>${fa} ${mas}${variacion}  ${hito}</h4>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
+<h4 class="card-text">${hito}</h4>
 </div>
 <div class="col-md-2">
-<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded">
+<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100">
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
