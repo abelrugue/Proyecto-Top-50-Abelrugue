@@ -16,17 +16,22 @@ const puestoRenderer = {
 </div>
 <div class="col-md-4 d-flex align-items-end">
 <div class="card-body">
-<p class="card-text">Max: ${puesto.peak}</p>
-<p class="card-text">Sem: ${puesto.sem}</p>
-<p class="card-text">Ant: ${puesto.posicion_anterior}</p>
-<a class="btn btn-primary"
-href="/create_puesto.html?puestoId=${puesto.puestoId}">Edit</a>
+<div class="col-md-1>
+<p class="card-text">Max:</p>
+<p class="card-text"><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
 </div>
+<div class="col-md-1>
+<p class="card-text">Sem:</p>
+<p class="card-text"><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
 </div>
+<div class="col-md-1>
+<p class="card-text">Ant:</p>
+<p class="card-text"><i class="fa-solid fa-clock"></i>${puesto.posicion_anterior}</p>
+
 </div>
 </div>`;
         let card = parseHTML(html);
-        console.log(card);
+        
         return card;
     },
 };
