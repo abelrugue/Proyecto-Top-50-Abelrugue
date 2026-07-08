@@ -29,6 +29,7 @@ async function asCardGallery() {
     let bodyDiv = document.getElementById("body");
         
 
+    console.log(inputname.value);
 
     let { data, error } = await supabase
         .from("vista_artista_canciones")
