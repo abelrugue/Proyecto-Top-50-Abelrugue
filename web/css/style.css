@@ -1,6 +1,6 @@
-div.photo-block{
-    text-align:center;
-    border:1px solid gray;
+div.photo-block {
+    text-align: center;
+    border: 1px solid gray;
     border-radius: 5%;
 }
 
@@ -22,60 +22,61 @@ img.photo-image {
 }
     */
 
-img.photo-image{
-    width:100%;
-    height:auto;
+img.photo-image {
+    width: 100%;
+    height: auto;
 }
 
-body.dark{
+body.dark {
     background-color: #222222;
     color: #eeeeee;
 }
 
-.gallery-container{
-    display:grid;
+.gallery-container {
+    display: grid;
     grid-template-columns: 33% 33% 33%;
 }
 
-input, select{
+input,
+select {
     background-color: #666666;
     border-color: #999999;
     color: white;
 }
 
-.input-group{
+.input-group {
     margin-bottom: 0.5em;
 }
 
-.input-group > label{
+.input-group>label {
     display: inline-block;
     width: 200px;
     text-align: right;
 }
 
 div.title-block {
-  text-align: center;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: #333333;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #333333;
 }
 
 #title {
-  font-size: 300%;
-  text-decoration: none;
-  color: #BBBBBB;
-  font-family: sans-serif;
-  margin-bottom: 0;
+    font-size: 300%;
+    text-decoration: none;
+    color: #BBBBBB;
+    font-family: sans-serif;
+    margin-bottom: 0;
 }
 
 #subtitle {
-  font-size: 120%;
-  font-style: italic;
-  color: #BBBBBB;
-  font-family: monospace;
+    font-size: 120%;
+    font-style: italic;
+    color: #BBBBBB;
+    font-family: monospace;
 }
 
-div.navigation > a {
+div.navigation>a {
     color: white;
     font-size: 120%;
     background-color: #555555;
@@ -86,7 +87,7 @@ div.navigation > a {
 }
 
 
-img.photo-user-avatar{
+img.photo-user-avatar {
     max-width: 25px;
     height: auto;
     border-radius: 50%;
@@ -95,4 +96,10 @@ img.photo-user-avatar{
 .bg-purple {
     background-color: rgb(255, 66, 189);
     color: white;
+}
+
+.max-cell {
+    max-width: 250px;
+    white-space: normal;
+    word-break: break-word;
 }

@@ -6,7 +6,7 @@ const cancionRenderer = {
     asCard: function (cancion) {
         let html = `<tr>
 <td scope="col">${cancion.titulo}</td>
-<td scope="col">${cancion.artistas}</td>
+<td scope="col" class="max-cell">${cancion.artistas}</td>
 <td scope="col">${cancion.peak}</td>
 <td scope="col">${cancion.sem}</td>
 <td scope="col">${cancion.puntuacion}</td>
