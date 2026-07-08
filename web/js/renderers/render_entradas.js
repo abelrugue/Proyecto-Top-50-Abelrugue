@@ -48,9 +48,10 @@ const cancionRenderer = {
             for (let cancion of data) {
                 html += this.asCard(cancion);
             }
-            return html;
+            
         });
 
+        return html;
 
 
     }
