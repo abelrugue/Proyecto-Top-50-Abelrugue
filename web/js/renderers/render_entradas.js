@@ -5,13 +5,13 @@ import { supabase } from "../supabase.js";
 const cancionRenderer = {
     asCard: function (cancion) {
 
-        let num1= "";
-        if(cancion.numeros_1==1){
-            num1=`style="background-color: rgb(255, 227, 67);"`;
-        }else if(cancion.numeros_1==2){
-            num1=`style="background-color: rgb(255, 162, 63);"`;
-        }else if(cancion.numeros_1==3){
-            num1=`style="background-color: rgb(255, 60, 60);"`;
+        let num1 = "";
+        if (cancion.numeros_1 == 1) {
+            num1 = `style="background-color: rgb(255, 227, 67);"`;
+        } else if (cancion.numeros_1 == 2) {
+            num1 = `style="background-color: rgb(255, 162, 63);"`;
+        } else if (cancion.numeros_1 == 3) {
+            num1 = `style="background-color: rgb(255, 60, 60);"`;
         }
 
         let html = `<tr ${num1}>
@@ -35,13 +35,17 @@ const cancionRenderer = {
 
         let inputname = document.getElementById("name-input");
 
-        
+        let btn = document.getElementById("btn");
 
-        let { data, error } = await supabase
-                    .from("vista_artista_canciones")
-                    .select("*")
-                    .eq("nombre", inputname.value)
-                    .order("fecha_debut");
+        btn.addEventListener("click", async () => {
+            let { data, error } = await supabase
+                .from("vista_artista_canciones")
+                .select("*")
+                .eq("nombre", inputname.value.trim())
+                .order("fecha_debut");
+        });
+
+
         let html = '';
         for (let cancion of data) {
             html += this.asCard(cancion);
