@@ -2,11 +2,25 @@
 import { parseHTML } from "/js/utils/parseHTML.js";
 const puestoRenderer = {
     asCard: function (puesto) {
+        let fa = null;
+        let mas = "";
+        if(puesto.variacion=null){
+            fa = `<i class="fa-solid fa-circle-n" style="color: rgb(255, 200, 0);"></i>`;
+        }else if(puesto.variacion<0){
+            fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
+        }else if(puesto.variacion=0){
+            fa = `<i class="fa-solid fa-equals fa-width-auto" style="color: rgb(138, 138, 138);"></i>`;
+        }else if(puesto.variacion>0){
+            fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(29, 183, 0);"></i>`;
+            mas = "+";
+        }
+
         let html = `
 <div class="card mb-3">
 <div class="row m-0">
-<div class="col-md-4">
+<div class="col-md-1">
 <h1 class="card-title">${puesto.posicion}</h1>
+<h1 class="card-title">${fa} ${mas}${puesto.variacion}</h1>
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
