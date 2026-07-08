@@ -21,8 +21,10 @@ const puestoRenderer = {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
         }
 
+        console.log(hitos.smf_posicion);
         let hito = "";
         if(hitos.smf_posicion == puesto.posicion){
+            console.log("entré aquí, puesto ", hitos.smf_posicion);
             hito = `<span class="badge badge-success">SMF</span>`;
         }else if(hitos.bmf_posicion == puesto.posicion){
             hito = `<span class="badge badge-danger">BMF</span>`;
