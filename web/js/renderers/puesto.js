@@ -46,17 +46,22 @@ const puestoRenderer = {
         }
 
         let color_num= "";
+        if(puesto.es_nuevo_peak){
+            color_num=`style="color: rgb(255, 213, 0);"`;
+        }
+
+        let num1= "";
         if(puesto.es_numero_1){
-            color_num=`style="color: rgb(255, 195, 195);"`;
+            num1=`style="color: rgb(255, 176, 176);"`;
         }
 
         
 
         let html = `
-<div class="card mb-3">
+<div class="card mb-3" ${num1}>
 <div class="row m-0">
-<div class="col-md-2" ${color_num}>
-<h1 class="card-title">${puesto.posicion}</h1>
+<div class="col-md-2" >
+<h1 class="card-title" ${color_num}>${puesto.posicion}</h1>
 <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
 <h4 class="card-text">${hito}</h4>
 <h4 class="card-text">${hito_rdp}</h4>
