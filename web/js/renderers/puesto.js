@@ -16,17 +16,19 @@ const puestoRenderer = {
 </div>
 <div class="col-md-4 d-flex align-items-end">
 <div class="card-body">
-<div class="col-md-1">
-<p class="card-text">Max:</p>
-<p class="card-text"><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
+<div class="d-flex justify-content-end gap-4 text-center">
+<div>
+<p class="mb-1">Max:</p>
+<p"><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
 </div>
-<div class="col-md-1">
-<p class="card-text">Sem:</p>
-<p class="card-text"><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
+<div>
+<p class="mb-1">Sem:</p>
+<p"><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
 </div>
-<div class="col-md-1">
-<p class="card-text">Ant:</p>
-<p class="card-text"><i class="fa-solid fa-clock"></i>${puesto.posicion_anterior}</p>
+<div>
+<p class="mb-1">Ant:</p>
+<p"><i class="fa-solid fa-clock"></i>${puesto.posicion_anterior}</p>
+</div>
 </div>
 </div>
 </div>`;
