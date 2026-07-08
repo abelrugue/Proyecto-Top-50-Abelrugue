@@ -7,27 +7,27 @@ const puestoRenderer = {
         let variacion = "";
         let color = "";
         if (puesto.variacion < 0) {
-            fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
+            fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(220, 53, 69);"></i>`;
             variacion = puesto.variacion;
-            color = `style="color: rgb(210, 3, 3);"`;
+            color = `style="color: rgb(220, 53, 69);"`;
         } else if (puesto.variacion == 0) {
             fa = `<i class="fa-regular fa-circle-pause fa-rotate-90" style="color: rgb(138, 138, 138);"></i>`;
         } else if (puesto.variacion > 0) {
-            fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(29, 183, 0);"></i>`;
+            fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(25, 135, 84);"></i>`;
             variacion = puesto.variacion;
-            color = `style="color: rgb(29, 183, 0);"`;
+            color = `style="color: rgb(25, 135, 84);"`;
             mas = "+";
         } else if (puesto.es_entrada) {
-            fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
+            fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 193, 7);"></i>`;
         }
 
         let hito = "";
         if (hitos.smf_posicion == puesto.posicion) {
-            hito = `<span class="badge bg-success">SMF</span>`;
+            hito = `<span class="badge rounded-pill bg-success">SMF</span>`;
         } else if (hitos.bmf_posicion == puesto.posicion) {
-            hito = `<span class="badge bg-danger">BMF</span>`;
+            hito = `<span class="badge rounded-pill bg-danger">BMF</span>`;
         } else if (hitos.emf_posicion == puesto.posicion) {
-            hito = `<span class="badge bg-warning">EMF</span>`;
+            hito = `<span class="badge rounded-pill bg-warning">EMF</span>`;
         }
 
 
@@ -37,8 +37,8 @@ const puestoRenderer = {
 <div class="card mb-3">
 <div class="row m-0">
 <div class="col-md-4">
-<h1 class="card-title">${puesto.posicion} ${hito}</h1>
-<h4 class="card-text" ${color}>${fa} ${mas}${variacion} ${hito}</h4> ${hito}
+<h1 class="card-title">${puesto.posicion}</h1>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion} ${hito}</h4>
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
