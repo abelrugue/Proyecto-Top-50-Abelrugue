@@ -37,7 +37,7 @@ const puestoRenderer = {
 
         let hito_rdp = "";
         if (array.includes(puesto.posicion)) {
-            hito_rdp = `<span class="badge rounded-pill bg-info">RDP</span>`;
+            hito_rdp = `<span class="badge rounded-pill bg-purple">RDP</span>`;
         }
 
 

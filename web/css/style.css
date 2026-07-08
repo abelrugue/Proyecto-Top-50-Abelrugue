@@ -91,3 +91,8 @@ img.photo-user-avatar{
     height: auto;
     border-radius: 50%;
 }
+
+.bg-purple {
+    background-color: #6f42c1;
+    color: white;
+}
