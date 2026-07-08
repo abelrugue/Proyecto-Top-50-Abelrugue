@@ -8,7 +8,7 @@ async function main() {
     try {
 
         let bodyDiv = document.getElementById("body");
-        bodyDiv.innerHTML += cancionRenderer.asCardGallery();
+        bodyDiv.innerHTML += await cancionRenderer.asCardGallery();
 
     } catch (err) {
         messageRenderer.showErrorMessage(err);
