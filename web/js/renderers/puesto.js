@@ -9,13 +9,13 @@ const puestoRenderer = {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
             variacion = puesto.variacion;
         } else if (puesto.variacion == 0) {
-            fa = `<i class="fa-solid fa-equals fa-width-auto" style="color: rgb(138, 138, 138);"></i>`;
+            fa = `<i class="fa-regular fa-circle-pause fa-rotate-90" style="color: rgb(138, 138, 138);"></i>`;
         } else if (puesto.variacion > 0) {
             fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(29, 183, 0);"></i>`;
             variacion = puesto.variacion;
             mas = "+";
         } else if (puesto.es_entrada) {
-            fa = `<i class="fa-solid fa-circle-n" style="color: rgb(255, 200, 0);"></i>`;
+            fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
         }
 
         let html = `
