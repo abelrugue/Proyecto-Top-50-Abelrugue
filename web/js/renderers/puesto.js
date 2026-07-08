@@ -63,20 +63,20 @@ const puestoRenderer = {
 <p class="card-text">${puesto.artistas}</p>
 </div>
 </div>
-<div class="col-md-4 d-flex align-items-end">
+<div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
 <div class="d-flex justify-content-end gap-4 text-center align-items-center">
 <div>
 <p class="mb-1">Max:</p>
-<p"><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
+<p><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
 </div>
 <div>
 <p class="mb-1">Sem:</p>
-<p"><i class="fa-solid fa-calendar"></i>  ${puesto.sem}</p>
+<p><i class="fa-solid fa-calendar"></i>  ${puesto.sem}</p>
 </div>
 <div>
 <p class="mb-1">Ant:</p>
-<p"><i class="fa-solid fa-clock"></i>  ${posicion_anterior}</p>
+<p><i class="fa-solid fa-clock"></i>  ${posicion_anterior}</p>
 </div>
 </div>
 </div>
