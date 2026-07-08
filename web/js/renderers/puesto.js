@@ -19,15 +19,15 @@ const puestoRenderer = {
 <div class="d-flex justify-content-end gap-4 text-center">
 <div>
 <p class="mb-1">Max:</p>
-<p"><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
+<p"><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
 </div>
 <div>
 <p class="mb-1">Sem:</p>
-<p"><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
+<p"><i class="fa-solid fa-calendar"></i>  ${puesto.sem}</p>
 </div>
 <div>
 <p class="mb-1">Ant:</p>
-<p"><i class="fa-solid fa-clock"></i>${puesto.posicion_anterior}</p>
+<p"><i class="fa-solid fa-clock"></i>  ${puesto.posicion_anterior}</p>
 </div>
 </div>
 </div>
