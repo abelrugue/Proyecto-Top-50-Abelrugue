@@ -6,6 +6,7 @@ const puestoRenderer = {
         let mas = "";
         let variacion = "";
         let color = "";
+        let posicion_anterior = puesto.posicion_anterior;
         if (puesto.variacion < 0) {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(220, 53, 69);"></i>`;
             variacion = puesto.variacion;
@@ -19,6 +20,7 @@ const puestoRenderer = {
             mas = "+";
         } else if (puesto.es_entrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 193, 7);"></i>`;
+            posicion_anterior = "-";
         }
 
         let hito = "";
@@ -53,7 +55,7 @@ const puestoRenderer = {
 <h4 class="card-text">${hito_rdp}</h4>
 </div>
 <div class="col-md-2">
-<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100">
+<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded h-100">
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
@@ -63,7 +65,7 @@ const puestoRenderer = {
 </div>
 <div class="col-md-4 d-flex align-items-end">
 <div class="card-body">
-<div class="d-flex justify-content-end gap-4 text-center">
+<div class="d-flex justify-content-end gap-4 text-center align-items-center">
 <div>
 <p class="mb-1">Max:</p>
 <p"><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
@@ -74,7 +76,7 @@ const puestoRenderer = {
 </div>
 <div>
 <p class="mb-1">Ant:</p>
-<p"><i class="fa-solid fa-clock"></i>  ${puesto.posicion_anterior}</p>
+<p"><i class="fa-solid fa-clock"></i>  ${posicion_anterior}</p>
 </div>
 </div>
 </div>
