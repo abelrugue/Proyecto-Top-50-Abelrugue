@@ -31,16 +31,14 @@ const puestoRenderer = {
         }
 
 
-        console.log(hito);
-        console.log(hitos.smf_posicion, typeof hitos.smf_posicion);
-        console.log(puesto.posicion, typeof puesto.posicion);
+        
 
         let html = `
 <div class="card mb-3">
 <div class="row m-0">
 <div class="col-md-4">
-<h1 class="card-title">${puesto.posicion}</h1>
-<h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4> ${hito}
+<h1 class="card-title">${puesto.posicion} ${hito}</h1>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion} ${hito}</h4> ${hito}
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
