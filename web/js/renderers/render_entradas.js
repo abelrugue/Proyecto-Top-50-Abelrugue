@@ -43,14 +43,16 @@ const cancionRenderer = {
                 .select("*")
                 .eq("nombre", inputname.value.trim())
                 .order("fecha_debut");
+
+            let html = '';
+            for (let cancion of data) {
+                html += this.asCard(cancion);
+            }
+            return html;
         });
 
 
-        let html = '';
-        for (let cancion of data) {
-            html += this.asCard(cancion);
-        }
-        return html;
+
     }
 };
 export { cancionRenderer };
