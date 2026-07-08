@@ -4,6 +4,7 @@ const puestoRenderer = {
     asCard: function (puesto) {
         let fa = null;
         let mas = "";
+        console.log(puesto.variacion);
         if(puesto.variacion=null){
             fa = `<i class="fa-solid fa-circle-n" style="color: rgb(255, 200, 0);"></i>`;
         }else if(puesto.variacion<0){
@@ -18,7 +19,7 @@ const puestoRenderer = {
         let html = `
 <div class="card mb-3">
 <div class="row m-0">
-<div class="col-md-1">
+<div class="col-md-4">
 <h1 class="card-title">${puesto.posicion}</h1>
 <h1 class="card-title">${fa} ${mas}${puesto.variacion}</h1>
 </div>
