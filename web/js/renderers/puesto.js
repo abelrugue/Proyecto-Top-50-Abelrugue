@@ -41,7 +41,7 @@ const puestoRenderer = {
 <h4 class="card-text" ${color}>${fa} ${mas}${variacion}  ${hito}</h4>
 </div>
 <div class="col-md-2">
-<img src="https://quinpart.com/imgs/placeholder.svg">
+<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded">
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
