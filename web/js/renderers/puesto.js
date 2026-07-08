@@ -21,6 +21,9 @@ const puestoRenderer = {
         } else if (puesto.es_entrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 193, 7);"></i>`;
             posicion_anterior = "-";
+        }else if (puesto.es_reentrada) {
+            fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 69, 7);"></i>`;
+            posicion_anterior = "-";
         }
 
         let hito = "";
@@ -42,13 +45,17 @@ const puestoRenderer = {
             hito_rdp = `<span class="badge rounded-pill bg-purple">RDP</span>`;
         }
 
+        let color_num= "";
+        if(puesto.es_numero_1){
+            color_num=`style="color: rgb(255, 195, 195);"`;
+        }
 
         
 
         let html = `
 <div class="card mb-3">
 <div class="row m-0">
-<div class="col-md-2">
+<div class="col-md-2" ${color_num}>
 <h1 class="card-title">${puesto.posicion}</h1>
 <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
 <h4 class="card-text">${hito}</h4>
