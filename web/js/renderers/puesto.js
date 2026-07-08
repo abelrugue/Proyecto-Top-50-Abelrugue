@@ -5,8 +5,6 @@ const puestoRenderer = {
         let fa = null;
         let mas = "";
         let variacion = "";
-        console.log("es_entrada:", puesto.es_entrada);
-        console.log("variacion:", puesto.variacion);
         if (puesto.variacion < 0) {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
             variacion = puesto.variacion;
@@ -17,8 +15,7 @@ const puestoRenderer = {
             variacion = puesto.variacion;
             mas = "+";
         } else if (puesto.es_entrada) {
-            console.log("HE ENTRADO");
-            fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(183, 146, 0);"></i>`;
+            fa = `<i class="fa-solid fa-n" style="color: rgb(255, 200, 0);"></i>`;
         }
 
         let html = `
