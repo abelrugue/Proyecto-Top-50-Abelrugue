@@ -23,11 +23,11 @@ const puestoRenderer = {
 
         let hito = "";
         if(hitos.smf_posicion == puesto.posicion){
-            hito = `"<span class="badge badge-success">SMF</span>"`;
+            hito = `<span class="badge badge-success">SMF</span>`;
         }else if(hitos.bmf_posicion == puesto.posicion){
-            hito = `"<span class="badge badge-danger">BMF</span>"`;
+            hito = `<span class="badge badge-danger">BMF</span>`;
         }else if(hitos.emf_posicion == puesto.posicion){
-            hito = `"<span class="badge badge-warning">EMF</span>"`;
+            hito = `<span class="badge badge-warning">EMF</span>`;
         }
 
 
