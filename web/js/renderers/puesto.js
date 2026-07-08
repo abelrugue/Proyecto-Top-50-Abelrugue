@@ -5,14 +5,17 @@ const puestoRenderer = {
         let fa = null;
         let mas = "";
         let variacion = "";
+        let color = "";
         if (puesto.variacion < 0) {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(210, 3, 3);"></i>`;
             variacion = puesto.variacion;
+            color = `style="color: rgb(210, 3, 3);"`;
         } else if (puesto.variacion == 0) {
             fa = `<i class="fa-regular fa-circle-pause fa-rotate-90" style="color: rgb(138, 138, 138);"></i>`;
         } else if (puesto.variacion > 0) {
             fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(29, 183, 0);"></i>`;
             variacion = puesto.variacion;
+            color = `style="color: rgb(29, 183, 0);"`;
             mas = "+";
         } else if (puesto.es_entrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 200, 0);"></i>`;
@@ -23,7 +26,7 @@ const puestoRenderer = {
 <div class="row m-0">
 <div class="col-md-4">
 <h1 class="card-title">${puesto.posicion}</h1>
-<h1 class="card-text">${fa} ${mas}${variacion}</h1>
+<h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
 </div>
 <div class="col-md-4 d-flex align-items-center">
 <div class="card-body">
