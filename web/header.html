@@ -27,8 +27,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html" id="navbar-recent">Lista actual</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="entradas_artista.html" id="navbar-create">Entradas por artista</a>
+                            <li class="nav-item dropdown" id="navbar-trending">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Estadísticas por artista
+                                </a>
+                                <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item text-dark" href="entradas_artista.html">Entradas por artista</a></li>
+                                    <li><a class="dropdown-item text-dark" href="n1_artista.html">Números 1 por artista</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="register.html" id="navbar-register">Register</a>
@@ -36,18 +43,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="login.html" id="navbar-login">Login</a>
                             </li>
-                            <li class="nav-item dropdown" id="navbar-trending">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Trending photos
-                                </a>
-                                <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item text-dark" href="trending_users.html">Trending
-                                            users</a></li>
-                                    <li><a class="dropdown-item text-dark" href="trending_photos.html">Trending
-                                            photos</a></li>
-                                </ul>
-                            </li>
+                    
                             <li class="nav-item">
                                 <a class="nav-link" href="#" id="navbar-logout">Logout</a>
                             </li>

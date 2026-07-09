@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/entradas_artista.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body>
+    <div id="page-header"></div>
+    <div class="container">
+        <div id="errors"></div>
+        <h3 class="text-center" id="title-n1-de-x">Números 1 de X</h3>
+        <hr>
+
+
+
+
+        <form id="team-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="name-input-n1">Nombre del artista</label>
+                    <input type="text" class="form-control" id="name-input-n1" name="name" placeholder="Nombre del artista" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="button" id="btn-n1" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+
+        
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Canción</th>
+                    <th scope="col">Artistas</th>
+                    <th scope="col">Max</th>
+                    <th scope="col">Sem</th>
+                    <th scope="col">Punt</th>
+                    <th scope="col">Números 1</th>
+                    <th scope="col">Top 5</th>
+                    <th scope="col">Top 10</th>
+                    <th scope="col">Fecha debut</th>
+                    <th scope="col">Fecha peak</th>
+                </tr>
+            </thead>
+            <tbody id="body-n1"></tbody>
+        </table>
+    </div>
+    </div>
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>
