@@ -16,9 +16,11 @@ const cancionRenderer = {
 <td scope="col">${i}</td>
 <td scope="col">${cancion.nombre}</td>
 <td scope="col">${num}</td>
-
-
 </tr>`;
+
+        if(tipo=="n1" && cancion.numeros_1==0){
+            html = "";
+        }
         return html;
     },
 
