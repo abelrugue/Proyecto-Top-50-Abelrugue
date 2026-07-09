@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/top_por_entradas.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body>
+    <div id="page-header"></div>
+    <div class="container">
+        <div id="errors"></div>
+        <h3 class="text-center" id="top_entradas">Top por entradas</h3>
+        <hr>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Artista</th>
+                    <th scope="col">Número de entradas</th>
+                </tr>
+            </thead>
+            <tbody id="body-entradas"></tbody>
+        </table>
+    </div>
+    </div>
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>
