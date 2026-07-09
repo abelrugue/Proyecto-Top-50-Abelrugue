@@ -43,8 +43,10 @@ const cancionRenderer = {
             .select("*")
             .order("numeros_1", { ascending: false });
         let html = '';
+        let i = 1;
         for (let cancion of data) {
-            html += this.asCard(cancion, "n1");
+            html += this.asCard(cancion, "n1", i);
+            i++;
         }
 
         return html;
