@@ -12,7 +12,7 @@ const cancionRenderer = {
             num = cancion.numeros_1;
         }
         let html = `<tr>
-<td scope="col">${cancion.titulo}</td>
+<td scope="col">${cancion.nombre}</td>
 <td scope="col">${num}</td>
 
 
