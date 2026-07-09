@@ -3,7 +3,7 @@
 import { supabase } from "../supabase.js";
 
 const cancionRenderer = {
-    asCard: function (cancion, tipo) {
+    asCard: function (cancion, tipo, i) {
 
         let num="";
         if(tipo=="entradas"){
@@ -11,7 +11,9 @@ const cancionRenderer = {
         }else{
             num = cancion.numeros_1;
         }
+
         let html = `<tr>
+<td scope="col">${i}</td>
 <td scope="col">${cancion.nombre}</td>
 <td scope="col">${num}</td>
 
@@ -26,8 +28,10 @@ const cancionRenderer = {
             .select("*")
             .order("num_entradas", { ascending: false });
         let html = '';
+        let i = 1;
         for (let cancion of data) {
-            html += this.asCard(cancion, "entradas");
+            html += this.asCard(cancion, "entradas", i);
+            i++;
         }
 
         return html;
