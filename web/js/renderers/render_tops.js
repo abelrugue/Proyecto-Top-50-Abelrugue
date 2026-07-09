@@ -20,11 +20,11 @@ const cancionRenderer = {
         return html;
     },
 
-    asCardGallery: function () {
+    asCardGallery: async function () {
         let { data, error } = await supabase
             .from("vista_artistas")
             .select("*")
-            .order("num_entradas");
+            .order("num_entradas", { ascending: false });
         let html = '';
         for (let cancion of data) {
             html += this.asCard(cancion, "entradas");
@@ -33,11 +33,11 @@ const cancionRenderer = {
         return html;
     },
 
-    asCardGallery_n1: function () {
+    asCardGallery_n1: async function () {
         let { data, error } = await supabase
             .from("vista_artistas")
             .select("*")
-            .order("numeros_1");
+            .order("numeros_1", { ascending: false });
         let html = '';
         for (let cancion of data) {
             html += this.asCard(cancion, "n1");
