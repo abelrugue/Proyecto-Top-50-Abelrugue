@@ -3,11 +3,13 @@
 import { supabase } from "../supabase.js";
 
 const cancionRenderer = {
-    asCard: function (cancion) {
+    asCard: function (cancion, tipo) {
 
         let num1 = "";
         if (cancion.numeros_1 == 1) {
-            num1 = `style="background-color: rgb(255, 227, 67);"`;
+            if (tipo == "entradas") {
+                num1 = `style="background-color: rgb(255, 227, 67);"`;
+            }
         } else if (cancion.numeros_1 == 2) {
             num1 = `style="background-color: rgb(255, 162, 63);"`;
         } else if (cancion.numeros_1 == 3) {

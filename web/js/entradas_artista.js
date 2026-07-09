@@ -39,7 +39,7 @@ async function asCardGallery() {
         .order("fecha_debut");
     let html = '';
     for (let cancion of data) {
-        html += cancionRenderer.asCard(cancion);
+        html += cancionRenderer.asCard(cancion, "entradas");
     }
     document.getElementById("title-entradas-de-x").innerHTML = `Entradas de ${inputname.value}`;
     bodyDiv.innerHTML = html;
@@ -56,7 +56,7 @@ async function asCardGallery_n1() {
         .order("fecha_peak");
     let html = '';
     for (let cancion of data) {
-        html += cancionRenderer.asCard(cancion);
+        html += cancionRenderer.asCard(cancion, "n1");
     }
     document.getElementById("title-n1-de-x").innerHTML = `Números 1 de ${inputname.value}`;
     bodyDiv.innerHTML = html;
