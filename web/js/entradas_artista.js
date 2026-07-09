@@ -53,7 +53,7 @@ async function asCardGallery_n1() {
         .from("vista_artista_canciones_num_1")
         .select("*")
         .eq("nombre", inputname.value.trim())
-        .order("fecha_debut");
+        .order("fecha_peak");
     let html = '';
     for (let cancion of data) {
         html += cancionRenderer.asCard(cancion);
