@@ -26,7 +26,8 @@ const cancionRenderer = {
         let { data, error } = await supabase
             .from("vista_artistas")
             .select("*")
-            .order("num_entradas", { ascending: false });
+            .order("num_entradas", { ascending: false })
+            .order("fecha_ultima_entrada");
         let html = '';
         let i = 1;
         for (let cancion of data) {
@@ -41,7 +42,8 @@ const cancionRenderer = {
         let { data, error } = await supabase
             .from("vista_artistas")
             .select("*")
-            .order("numeros_1", { ascending: false });
+            .order("numeros_1", { ascending: false })
+            .order("fecha_ultimo_n1");
         let html = '';
         let i = 1;
         for (let cancion of data) {
