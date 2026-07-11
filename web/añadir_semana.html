@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/puestos.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body class="light">
+
+    <div id="page-header"></div>
+
+
+
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md">
+                <h3>Añadir nueva lista</h3>
+            </div>
+            <hr>
+        </div>
+
+        <form id="nueva-semana-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="fecha-input">Fecha</label>
+                    <input type="date" class="form-control" id="fecha-input" name="fecha" placeholder="fecha" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="lista-input">Lista semanal</label>
+                    <textarea id="lista-input" class="form-control" rows="50"
+                        placeholder="1;Hard to be humble&#10;2;Fugaz&#10;3;Mañana"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="submit" id="btn-buscar-artistas" class="btn btn-primary">Buscar artistas</button>
+                </div>
+            </div>
+        </form>
+
+
+        <div id="errors"></div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>include("header.html", "#page-header")</script>
+
+</body>
+
+</html>
