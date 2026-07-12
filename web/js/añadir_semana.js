@@ -32,7 +32,7 @@ async function buscaArtistas() {
         .map(l => l.trim())
         .filter(Boolean);
 
-    console.log(JSON.stringify({ titulos }, null, 2));
+    
 
     const { data, error } = await supabase.functions.invoke(
         "buscar-canciones",
