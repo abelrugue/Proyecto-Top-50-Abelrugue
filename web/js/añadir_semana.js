@@ -4,13 +4,11 @@ import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
 
 async function main() {
-    document.getElementById("nueva-semana-form").onsubmit = sendForm;
+    document.getElementById("btn-buscar-artistas").addEventListener("click", buscaArtistas);
 }
 
-async function sendForm(event) {
-    let form = event.target;
-    event.preventDefault();
-
+async function buscaArtistas() {
+    
     try {
         let textarea = document.getElementById("lista-input");
         let texto = textarea.value;
