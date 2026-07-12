@@ -18,6 +18,7 @@ const messageRenderer = {
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>`;
         let errorsDiv = getErrorsDiv();
+        console.log(errorsDiv);
 
         if (errorsDiv === null) {
             console.error("You tried to render the following message, however, a " +
@@ -27,6 +28,7 @@ const messageRenderer = {
         }
 
         let messageElem = parseHTML(html);
+        console.log(messageElem);
         errorsDiv.appendChild(messageElem);
     },
 
