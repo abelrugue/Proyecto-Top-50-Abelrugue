@@ -4,25 +4,41 @@ import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
 
 async function main() {
+    document.getElementById("nueva-semana-form").onsubmit = sendForm;
+}
+
+async function sendForm(event) {
+    let form = event.target;
+    event.preventDefault();
+
     try {
         let textarea = document.getElementById("lista-input");
         let texto = textarea.value;
 
-        const lineas = texto
+        const titulos = texto
             .trim()
             .split("\n")
             .map(l => l.trim())
             .filter(Boolean);
 
-            /*
-        let { data, error } = await supabase
-            .from("vista_lista_actual")
-            .select("*");
+        const { data, error } = await supabase.functions.invoke(
+            "buscar-canciones",
+            {
+                body: {
+                    titulos
+                }
+            }
+        );
 
-            */
-        // content.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps));
+        if (error) {
+            console.error(error);
+        } else {
+            console.log(data);
+        }
     } catch (err) {
         messageRenderer.showErrorMessage(err);
     }
 }
+
+
 document.addEventListener("DOMContentLoaded", main);
