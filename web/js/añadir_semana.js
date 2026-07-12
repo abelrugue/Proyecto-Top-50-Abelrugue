@@ -35,7 +35,7 @@ async function buscaArtistas() {
     
 
     const { data, error } = await supabase.functions.invoke(
-        "buscar-canciones",
+        "buscar_canciones",
         {
             body: {
                 titulos
