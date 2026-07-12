@@ -1,5 +1,4 @@
 "use strict";
-import { galleryRenderer } from "./renderers/lista.js";
 import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
 
