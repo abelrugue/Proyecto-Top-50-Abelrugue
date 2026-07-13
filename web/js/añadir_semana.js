@@ -155,8 +155,8 @@ async function insertaSemana() {
 
     console.log(body);
 
-    /*
-    const { data, error } = await supabase.functions.invoke(
+    
+    const { data: data_insertar, error: error_insertar } = await supabase.functions.invoke(
         "insertar-semana",
         {
             body
@@ -166,11 +166,11 @@ async function insertaSemana() {
     );
 
     if (error) {
-        console.error(error);
+        console.error(error_insertar);
     } else {
-        console.log(data);
+        console.log(data_insertar);
     }
-    */
+    
 }
 
 
