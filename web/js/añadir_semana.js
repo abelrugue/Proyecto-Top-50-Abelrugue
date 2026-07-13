@@ -104,6 +104,11 @@ async function buscaArtistas() {
 async function insertaSemana() {
 
     const puestos_lista = [];
+    const titulos = texto
+        .trim()
+        .split("\n")
+        .map(l => l.trim())
+        .filter(Boolean);
 
     for (let i = 0; i < titulos.length; i++) {
 
