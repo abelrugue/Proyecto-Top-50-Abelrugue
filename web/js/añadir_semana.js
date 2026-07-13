@@ -60,15 +60,15 @@ async function buscaArtistas() {
 
 
         if (opciones.length === 0) {
-            html_artistas += `<input type="text" class="form-control" id="${titulo}-input" name="fecha" placeholder="Artistas de ${titulo}" required>`
-            
+            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo}" required>`
+
 
         } else if (opciones.length === 1) {
             html_artistas += opciones[0].artistas;
 
 
         } else {
-            html_artistas += `<select class="form-select">`;
+            html_artistas += `<select class="form-select" id="cancion-${i}>`;
             for (const cancion of opciones) {
                 html_artistas += `
                 <option value="${cancion.id}">
@@ -90,10 +90,81 @@ async function buscaArtistas() {
 
 
     }
-    
-    bodyDiv.innerHTML = html;
-    
 
+    bodyDiv.innerHTML = html;
+
+    let btn_insertar_semana = document.getElementById("btn-insertar-semana");
+
+    if (btn_insertar_semana) {
+        btn_insertar_semana.addEventListener("click", insertaSemana);
+    }
+
+}
+
+async function insertaSemana() {
+
+    const puestos = [];
+
+    for (let i = 0; i < titulos.length; i++) {
+
+        const titulo = titulos[i];
+        const opciones = data.canciones[titulo];
+
+        if (opciones.length === 0) {
+
+
+            let id_artistas_i = document.getElementById(`artistas-${i + 1}`);
+            puestos.push({
+                posicion: i + 1,
+                titulo: titulo,
+                artistas: id_artistas_i.value.trim().split(";").map(l => l.trim()).filter(Boolean)
+            });
+
+        } else if (opciones.length === 1) {
+
+
+            puestos.push({
+                posicion: i + 1,
+                cancion_id: opciones[0].cancion_id
+            });
+
+        } else {
+
+
+            let id_cancion_i = document.getElementById(`cancion-${i + 1}`);
+
+            puestos.push({
+                posicion: i + 1,
+                cancion_id: id_cancion_i.value
+            });
+
+        }
+
+    }
+
+    const body = {
+        fecha: document.getElementById("fecha-input").value,
+        puestos
+    };
+
+    console.log(body);
+
+    /*
+    const { data, error } = await supabase.functions.invoke(
+        "insertar-semana",
+        {
+            body
+        }
+
+
+    );
+
+    if (error) {
+        console.error(error);
+    } else {
+        console.log(data);
+    }
+    */
 }
 
 
