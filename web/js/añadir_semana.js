@@ -165,7 +165,7 @@ async function insertaSemana() {
 
     );
 
-    if (error) {
+    if (error_insertar) {
         console.error(error_insertar);
     } else {
         console.log(data_insertar);
