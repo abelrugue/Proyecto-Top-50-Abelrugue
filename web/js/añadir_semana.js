@@ -65,7 +65,7 @@ async function buscaArtistas() {
 
 
         if (opciones.length === 0) {
-            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo}" required>`
+            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ;)" required>`
 
 
         } else if (opciones.length === 1) {
@@ -141,7 +141,7 @@ async function insertaSemana() {
 
             puestos_lista.push({
                 posicion: i + 1,
-                cancion_id: id_cancion_i.value
+                cancion_id: Number(id_cancion_i.value)
             });
 
         }
