@@ -103,7 +103,7 @@ async function buscaArtistas() {
 
 async function insertaSemana() {
 
-    const puestos = [];
+    const puestos_lista = [];
 
     for (let i = 0; i < titulos.length; i++) {
 
@@ -114,7 +114,7 @@ async function insertaSemana() {
 
 
             let id_artistas_i = document.getElementById(`artistas-${i + 1}`);
-            puestos.push({
+            puestos_lista.push({
                 posicion: i + 1,
                 titulo: titulo,
                 artistas: id_artistas_i.value.trim().split(";").map(l => l.trim()).filter(Boolean)
@@ -123,7 +123,7 @@ async function insertaSemana() {
         } else if (opciones.length === 1) {
 
 
-            puestos.push({
+            puestos_lista.push({
                 posicion: i + 1,
                 cancion_id: opciones[0].cancion_id
             });
@@ -133,7 +133,7 @@ async function insertaSemana() {
 
             let id_cancion_i = document.getElementById(`cancion-${i + 1}`);
 
-            puestos.push({
+            puestos_lista.push({
                 posicion: i + 1,
                 cancion_id: id_cancion_i.value
             });
@@ -144,7 +144,7 @@ async function insertaSemana() {
 
     const body = {
         fecha: document.getElementById("fecha-input").value,
-        puestos
+        puestos: puestos_lista
     };
 
     console.log(body);
