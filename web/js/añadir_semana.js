@@ -165,6 +165,9 @@ async function insertaSemana() {
 
     );
 
+    console.log("DATA:", data_insertar);
+    console.log("ERROR:", error_insertar);
+
 
     if (error_insertar) {
         messageRenderer.showErrorMessage(error_insertar.message);
