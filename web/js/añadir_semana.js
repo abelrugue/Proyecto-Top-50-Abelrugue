@@ -175,7 +175,7 @@ async function insertaSemana() {
     }
 
     if (!data_insertar.ok) {
-        messageRenderer.showErrorMessage(data_insertar.error_insertar);
+        messageRenderer.showErrorMessage(data_insertar.error);
         return;
     }
 
