@@ -96,7 +96,20 @@ async function buscaArtistas() {
 
     }
 
+    let headDiv = document.getElementById("head-busca-artistas");
+    let html_head = `<tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Artistas</th>
+                    </tr>`;
+
+    let btnInsertarDiv = document.getElementById("div-btn-insertar");
+    let html_div_btn = `<button type="button" id="btn-insertar-semana" class="btn btn-primary">Insertar semana</button>`;
+
+
+    headDiv.innerHTML = html_head;
     bodyDiv.innerHTML = html;
+    btnInsertarDiv.innerHTML = html_div_btn;
 
     let btn_insertar_semana = document.getElementById("btn-insertar-semana");
 
