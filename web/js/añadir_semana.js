@@ -2,6 +2,9 @@
 import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
 
+let titulos = [];
+let data = null;
+
 async function main() {
     try {
 
@@ -26,7 +29,7 @@ async function buscaArtistas() {
     let texto = textarea.value;
 
 
-    const titulos = texto
+    titulos = texto
         .trim()
         .split("\n")
         .map(l => l.trim())
@@ -34,7 +37,7 @@ async function buscaArtistas() {
 
 
 
-    const { data, error } = await supabase.functions.invoke(
+    const respuesta = await supabase.functions.invoke(
         "buscar_canciones",
         {
             body: {
@@ -42,7 +45,9 @@ async function buscaArtistas() {
             }
         }
     );
-    console.log("7", data, error);
+
+    data = respuesta.data;
+    const error = respuesta.error;
 
     if (error) {
         console.error(error);
@@ -68,7 +73,7 @@ async function buscaArtistas() {
 
 
         } else {
-            html_artistas += `<select class="form-select" id="cancion-${i}>`;
+            html_artistas += `<select class="form-select" id="cancion-${i}">`;
             for (const cancion of opciones) {
                 html_artistas += `
                 <option value="${cancion.id}">
@@ -104,11 +109,7 @@ async function buscaArtistas() {
 async function insertaSemana() {
 
     const puestos_lista = [];
-    const titulos = texto
-        .trim()
-        .split("\n")
-        .map(l => l.trim())
-        .filter(Boolean);
+
 
     for (let i = 0; i < titulos.length; i++) {
 
