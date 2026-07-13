@@ -131,7 +131,7 @@ async function insertaSemana() {
 
             puestos_lista.push({
                 posicion: i + 1,
-                cancion_id: opciones[0].cancion_id
+                cancion_id: opciones[0].id
             });
 
         } else {
