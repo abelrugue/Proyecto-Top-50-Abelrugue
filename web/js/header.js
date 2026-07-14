@@ -1,25 +1,35 @@
 "use strict";
 
 import { sessionManager } from "/js/utils/session.js";
+import { supabase } from "./supabase.js";
 
-function main(){
+function main() {
     /*
     showUser();
     addLogoutHandler();
     hideHeaderOptions();
     */
+
+    const btn = document.getElementById("btn-logout");
+
+    if (btn) {
+        btn.addEventListener("click", async () => {
+            await supabase.auth.signOut();
+            window.location.href = "/login.html";
+        });
+    }
 }
 
 
-function showUser(){
+function showUser() {
     let title = document.getElementById("navbar-title");
     let text;
 
-    if(sessionManager.isLogged()){
+    if (sessionManager.isLogged()) {
         let username = sessionManager.getLoggedUser().username;
-        text="Hi, @" + username;
-    }else{
-        text="Guest";
+        text = "Hi, @" + username;
+    } else {
+        text = "Guest";
     }
     title.textContent = text;
 }

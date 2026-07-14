@@ -17,6 +17,15 @@ async function main() {
             return;
         }
 
+        const {
+            data: { user }
+        } = await supabase.auth.getUser();
+
+        if (!user) {
+            window.location.href = "/login.html";
+            return;
+        }
+
         let btn_buscar_artistas = document.getElementById("btn-buscar-artistas");
 
         if (btn_buscar_artistas) {
