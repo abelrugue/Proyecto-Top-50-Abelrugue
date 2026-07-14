@@ -8,6 +8,15 @@ let data = null;
 async function main() {
     try {
 
+        const {
+            data: { session }
+        } = await supabase.auth.getSession();
+
+        if (!session) {
+            window.location.href = "/login.html";
+            return;
+        }
+
         let btn_buscar_artistas = document.getElementById("btn-buscar-artistas");
 
         if (btn_buscar_artistas) {
@@ -65,7 +74,7 @@ async function buscaArtistas() {
 
 
         if (opciones.length === 0) {
-            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ;)" required>`
+            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ';')" required>`
 
 
         } else if (opciones.length === 1) {
@@ -193,6 +202,7 @@ async function insertaSemana() {
     }
 
     messageRenderer.showSuccessMessage("Semana añadida correctamente.");
+    messageRenderer.showSuccessMessage(`${data_insertar}`);
 
 }
 
