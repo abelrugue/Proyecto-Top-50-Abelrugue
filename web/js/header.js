@@ -3,7 +3,7 @@
 import { sessionManager } from "/js/utils/session.js";
 import { supabase } from "./supabase.js";
 
-function main() {
+async function main() {
     /*
     showUser();
     addLogoutHandler();
