@@ -10,6 +10,28 @@ function main() {
     hideHeaderOptions();
     */
 
+    const {
+        data: { session }
+    } = await supabase.auth.getSession();
+
+    const navAnadir = document.getElementById("nav-anadir-semana");
+    const navLogin = document.getElementById("nav-login");
+    const navLogout = document.getElementById("nav-logout");
+
+    if (session) {
+
+        navAnadir.style.display = "";
+        navLogout.style.display = "";
+        navLogin.style.display = "none";
+
+    } else {
+
+        navAnadir.style.display = "none";
+        navLogout.style.display = "none";
+        navLogin.style.display = "";
+
+    }
+
     const btn = document.getElementById("btn-logout");
 
     if (btn) {
