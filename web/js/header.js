@@ -42,7 +42,7 @@ function main() {
     }
 }
 
-
+/*
 function showUser() {
     let title = document.getElementById("navbar-title");
     let text;
@@ -83,6 +83,6 @@ function hideHeaderOptions() {
         headerTrending.style.display = "none";
     }
 }
-
+*/
 
 document.addEventListener("DOMContentLoaded", main)
