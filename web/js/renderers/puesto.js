@@ -5,34 +5,44 @@ const puestoRenderer = {
         let fa = null;
         let mas = "";
         let variacion = "";
+        let variacion_mensajes = "";
         let color = "";
         let posicion_anterior = puesto.posicion_anterior;
         if (puesto.variacion < 0) {
             fa = `<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(220, 53, 69);"></i>`;
             variacion = puesto.variacion;
+            variacion_mensajes = variacion;
             color = `style="color: rgb(220, 53, 69);"`;
         } else if (puesto.variacion == 0) {
             fa = `<i class="fa-regular fa-circle-pause fa-rotate-90" style="color: rgb(138, 138, 138);"></i>`;
+            variacion_mensajes = "=";
         } else if (puesto.variacion > 0) {
             fa = `<i class="fa-regular fa-circle-up fa-width-auto" style="color: rgb(25, 135, 84);"></i>`;
             variacion = puesto.variacion;
+            variacion_mensajes = variacion;
             color = `style="color: rgb(25, 135, 84);"`;
             mas = "+";
         } else if (puesto.es_entrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 193, 7);"></i>`;
             posicion_anterior = "-";
+            variacion_mensajes = "N";
         } else if (puesto.es_reentrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 69, 7);"></i>`;
             posicion_anterior = "-";
+            variacion_mensajes = "RE";
         }
 
         let hito = "";
+        let hito_mensaje = "";
         if (hitos.smf_posicion == puesto.posicion) {
             hito = `<span class="badge rounded-pill bg-success">SMF</span>`;
+            hito_mensaje = "SMF - ";
         } else if (hitos.bmf_posicion == puesto.posicion) {
             hito = `<span class="badge rounded-pill bg-danger">BMF</span>`;
+            hito_mensaje = "BMF - ";
         } else if (hitos.emf_posicion == puesto.posicion) {
             hito = `<span class="badge rounded-pill bg-warning">EMF</span>`;
+            hito_mensaje = "EMF - ";
         }
 
         let array = [];
@@ -41,8 +51,10 @@ const puestoRenderer = {
         }
 
         let hito_rdp = "";
+        let hito_rdp_mensaje = "";
         if (array.includes(puesto.posicion)) {
             hito_rdp = `<span class="badge rounded-pill bg-purple">RDP</span>`;
+            hito_rdp_mensaje = "RDP - ";
         }
 
         let color_num = "";
@@ -106,12 +118,12 @@ const puestoRenderer = {
         
         boton.addEventListener("click", async () => {
             try {
-                await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${puesto.titulo.toUpperCase()} (${mas}${variacion}) ${puesto.artistas}
+                await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${hito_rdp_mensaje}${hito_mensaje}${puesto.titulo.toUpperCase()} (${mas}${variacion_mensajes}) ${puesto.artistas}
 
 Max. ${puesto.peak}, Sem. ${puesto.sem}
 
 ${puesto.youtube_url}`);
-                alert("Que viene IISSI");
+                
             } catch (err) {
                 console.error(err);
             }
