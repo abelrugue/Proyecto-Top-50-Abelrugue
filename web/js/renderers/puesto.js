@@ -21,7 +21,7 @@ const puestoRenderer = {
         } else if (puesto.es_entrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 193, 7);"></i>`;
             posicion_anterior = "-";
-        }else if (puesto.es_reentrada) {
+        } else if (puesto.es_reentrada) {
             fa = `<i class="fa-solid fa-certificate" style="color: rgb(255, 69, 7);"></i>`;
             posicion_anterior = "-";
         }
@@ -45,17 +45,17 @@ const puestoRenderer = {
             hito_rdp = `<span class="badge rounded-pill bg-purple">RDP</span>`;
         }
 
-        let color_num= "";
-        if(puesto.es_nuevo_peak){
-            color_num=`style="color: rgb(255, 170, 0);"`;
+        let color_num = "";
+        if (puesto.es_nuevo_peak) {
+            color_num = `style="color: rgb(255, 170, 0);"`;
         }
 
-        let num1= "";
-        if(puesto.es_numero_1){
-            num1=`style="background-color: rgb(255, 236, 236);"`;
+        let num1 = "";
+        if (puesto.es_numero_1) {
+            num1 = `style="background-color: rgb(255, 236, 236);"`;
         }
 
-        
+
 
         let html = `
 <div class="card mb-3" ${num1}>
@@ -99,7 +99,10 @@ const puestoRenderer = {
 
 </div>`;
 
-        document.getElementById(`copiar-${puesto.posicion}`).addEventListener("click", async () => {
+        let card = parseHTML(html);
+
+        
+        card.querySelector(`#copiar-${puesto.posicion}`).addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${puesto.titulo.toUpperCase()} (${mas}${variacion}) ${puesto.artistas}
 
@@ -112,7 +115,7 @@ ${puesto.youtube_url}`);
             }
         });
 
-        let card = parseHTML(html);
+
 
         return card;
     },
