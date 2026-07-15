@@ -101,8 +101,9 @@ const puestoRenderer = {
 
         let card = parseHTML(html);
 
+        const boton = card.querySelector(`#copiar-${puesto.posicion}`);
         
-        card.querySelector(`#copiar-${puesto.posicion}`).addEventListener("click", async () => {
+        boton.addEventListener("click", async () => {
             try {
                 await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${puesto.titulo.toUpperCase()} (${mas}${variacion}) ${puesto.artistas}
 
@@ -118,6 +119,6 @@ ${puesto.youtube_url}`);
 
 
         return card;
-    },
+    }
 };
 export { puestoRenderer };
