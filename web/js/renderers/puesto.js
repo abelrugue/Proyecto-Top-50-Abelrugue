@@ -1,7 +1,7 @@
 "use strict";
 import { parseHTML } from "/js/utils/parseHTML.js";
 const puestoRenderer = {
-    asCard: async function (puesto, hitos, rdps) {
+    asCard: function (puesto, hitos, rdps) {
         let fa = null;
         let mas = "";
         let variacion = "";
