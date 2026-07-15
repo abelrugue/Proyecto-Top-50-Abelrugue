@@ -75,7 +75,7 @@ const puestoRenderer = {
 <p class="card-text">${puesto.artistas}</p>
 </div>
 </div>
-<div class="col-md-4 d-flex align-items-center">
+<div class="col-md-3 d-flex align-items-center">
 <div class="card-body">
 <div class="d-flex justify-content-end gap-4 text-center align-items-center">
 <div>
@@ -92,7 +92,26 @@ const puestoRenderer = {
 </div>
 </div>
 </div>
+
+<div class="col-md-1 d-flex align-items-center text-center">
+<button class="btn btn-sm btn-outline-secondary" id="copiar-${puesto.posicion}">Copiar</button>
+</div>
+
 </div>`;
+
+        document.getElementById(`copiar-${puesto.posicion}`).addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${puesto.titulo.toUpperCase()} (${mas}${variacion}) ${puesto.artistas}
+
+Max. ${puesto.peak}, Sem. ${puesto.sem}
+
+${puesto.youtube_url}`);
+                alert("Texto copiado.");
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
         let card = parseHTML(html);
 
         return card;
