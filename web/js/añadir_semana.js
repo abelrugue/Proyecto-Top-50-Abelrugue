@@ -83,7 +83,8 @@ async function buscaArtistas() {
 
 
         if (opciones.length === 0) {
-            html_artistas += `<input type="text" class="form-control" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ';')" required>`
+            html_artistas += `<input type="text" class="form-control mb-2" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ';')" required>
+                            <input type="url" class="form-control" id="youtube-${i}" placeholder="https://youtu.be/..." required>`
 
 
         } else if (opciones.length === 1) {
@@ -151,10 +152,12 @@ async function insertaSemana() {
 
 
             let id_artistas_i = document.getElementById(`artistas-${i + 1}`);
+            let id_youtube_i = document.getElementById(`youtube-${i + 1}`);
             puestos_lista.push({
                 posicion: i + 1,
                 titulo: titulo,
-                artistas: id_artistas_i.value.trim().split(";").map(l => l.trim()).filter(Boolean)
+                artistas: id_artistas_i.value.trim().split(";").map(l => l.trim()).filter(Boolean),
+                youtube_url: id_youtube_i.value.trim()
             });
 
         } else if (opciones.length === 1) {
