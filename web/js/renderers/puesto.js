@@ -93,7 +93,7 @@ const puestoRenderer = {
 </div>
 </div>
 
-<div class="col-md-1 d-flex align-items-center text-center justify-content-end">
+<div class="col-md-1 d-flex align-items-center text-center">
 <button class="btn btn-sm btn-outline-secondary" id="copiar-${puesto.posicion}">Copiar</button>
 </div>
 
