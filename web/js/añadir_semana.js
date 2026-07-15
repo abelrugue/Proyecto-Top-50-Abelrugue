@@ -210,8 +210,12 @@ async function insertaSemana() {
         return;
     }
 
-    messageRenderer.showSuccessMessage("Semana añadida correctamente.");
-    messageRenderer.showSuccessMessage(`${data_insertar}`);
+    messageRenderer.showSuccessMessage(
+        `Semana añadida correctamente.
+        Canciones creadas: ${data_insertar.canciones_creadas},
+        Artistas creados: ${data_insertar.artistas_creados},
+        Relaciones creadas: ${data_insertar.relaciones_insertadas}.`
+    );
 
 }
 
