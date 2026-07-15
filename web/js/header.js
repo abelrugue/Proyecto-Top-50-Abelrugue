@@ -23,7 +23,7 @@ async function main() {
         navAnadir.style.display = "";
         navLogout.style.display = "";
         navLogin.style.display = "none";
-
+ 
     } else {
 
         navAnadir.style.display = "none";
