@@ -111,7 +111,7 @@ const puestoRenderer = {
 Max. ${puesto.peak}, Sem. ${puesto.sem}
 
 ${puesto.youtube_url}`);
-                alert("Texto copiado.");
+                alert("Que viene IISSI");
             } catch (err) {
                 console.error(err);
             }
