@@ -98,7 +98,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <i class="fa-solid fa-trophy"></i> ${puesto.peak}
+                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <i class="fa-solid fa-calendar"></i> ${puesto.sem}
+                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
                                 </div>
                             </div>
 
@@ -120,7 +120,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <i class="fa-solid fa-clock"></i> ${posicion_anterior}
+                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,8 @@ const puestoRenderer = {
 
                 <div class="col-1 col-md-1 d-flex align-items-center justify-content-center">
                     <button class="btn btn-sm btn-outline-secondary" id="copiar-${puesto.posicion}">
-                        <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i></button>
+                        <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i>
+                    </button>
                 </div>
 
             </div>
