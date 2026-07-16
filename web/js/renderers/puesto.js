@@ -71,15 +71,15 @@ const puestoRenderer = {
 
 
         let html = `
-        <div class="card mb-3" ${num1}>
-            <div class="row m-0">
+        <div class="card mb-2 p-1" ${num1}>
+            <div class="row g-1 align-items-center m-0">
                 <div class="col-2 col-md-2" >
                     <h1 class="card-title" >${puesto.posicion}</h1>
                     <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
                     <h4 class="card-text">${hito}</h4>
                     <h4 class="card-text">${hito_rdp}</h4>
                 </div>
-                <div class="col-3 col-md-2">
+                <div class="col-2 col-md-2">
                     <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
                 <div class="col-5 col-md-4 d-flex align-items-center">
@@ -124,9 +124,9 @@ const puestoRenderer = {
             try {
                 await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${hito_rdp_mensaje}${hito_mensaje}${puesto.titulo.toUpperCase()} (${mas}${variacion_mensajes}) ${puesto.artistas}
 
-Max.${puesto.peak}, Sem.${puesto.sem}
+Max. ${puesto.peak}, Sem. ${puesto.sem}
 
-${puesto.youtube_url} `);
+${puesto.youtube_url}`);
 
             } catch (err) {
                 console.error(err);
