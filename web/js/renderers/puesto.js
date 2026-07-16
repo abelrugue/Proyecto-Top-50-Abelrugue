@@ -98,7 +98,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <p class="card-text"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p class="card-text"><i class="fa-solid fa-trophy"></i> ${puesto.peak}<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(220, 53, 69);"></i></p>
                                 </div>
                             </div>
 
