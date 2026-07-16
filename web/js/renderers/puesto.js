@@ -132,6 +132,69 @@ ${puesto.youtube_url}`);
 
 
         return card;
+    },
+    asCardSalida: function (salida) {
+
+
+
+        let html = `
+<div class="card mb-3">
+<div class="row m-0">
+<div class="col-md-2" >
+<h1 class="card-title" ><i class="fa-solid fa-xmark" style="color: rgb(220, 53, 69);"></i>${salida.posicion_anterior}</h1>
+</div>
+<div class="col-md-2">
+<img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded h-100">
+</div>
+<div class="col-md-4 d-flex align-items-center">
+<div class="card-body">
+<h3 class="card-title">${salida.titulo}</h3>
+<p class="card-text">${salida.artistas}</p>
+</div>
+</div>
+<div class="col-md-3 d-flex align-items-center">
+<div class="card-body">
+<div class="d-flex justify-content-end gap-4 text-center align-items-center">
+<div>
+<p class="mb-1">Max:</p>
+<p><i class="fa-solid fa-trophy"></i>  ${salida.peak}</p>
+</div>
+<div>
+<p class="mb-1">Sem:</p>
+<p><i class="fa-solid fa-calendar"></i>  ${salida.sem}</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-1 d-flex align-items-center text-center">
+<button class="btn btn-sm btn-outline-secondary" id="copiar-salida-${salida.posicion_anterior}">
+    <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i></button>
+</div>
+
+</div>`;
+
+        let card = parseHTML(html);
+
+        const boton = card.querySelector(`#copiar-salida-${salida.posicion_anterior}`);
+        
+        boton.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(`❌ ${salida.posicion_anterior}.‎ ${salida.titulo.toUpperCase()} (${salida.artistas})
+
+Max. ${salida.peak}, Sem. ${salida.sem}
+
+Recorrido: ${salida.recorrido}-X
+
+${salida.youtube_url}`);
+                
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
+
+
+        return card;
     }
 };
 export { puestoRenderer };

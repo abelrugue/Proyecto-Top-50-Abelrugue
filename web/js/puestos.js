@@ -16,7 +16,10 @@ async function main() {
         let { data: rdps, error: error3 } = await supabase
             .from("vista_record_permanencia")
             .select("*")
-        content.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps));
+        let { data: salidas, error: error4 } = await supabase
+            .from("vista_salidas")
+            .select("*")
+        content.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps, salidas));
     } catch (err) {
         messageRenderer.showErrorMessage(err);
     }
