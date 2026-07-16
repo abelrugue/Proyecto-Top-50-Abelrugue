@@ -148,11 +148,14 @@ img.photo-user-avatar {
         padding: .2rem .4rem;
     }
 
+
     .card-title {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
         overflow: hidden;
+        display: -webkit-box;
+        display: box;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
     }
-    
+
 }
