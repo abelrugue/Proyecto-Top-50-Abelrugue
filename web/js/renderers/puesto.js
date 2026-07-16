@@ -138,10 +138,10 @@ ${puesto.youtube_url}`);
 
 
         let html = `
-<div class="card mb-3">
+<div class="card mb-3 card-salida">
 <div class="row m-0">
 <div class="col-md-2" >
-<h1 class="card-title" ><i class="fa-solid fa-xmark" style="color: rgb(220, 53, 69);"></i>${salida.posicion_anterior}</h1>
+<h1 class="card-title" ><i class="fa-solid fa-xmark fa-xl" style="color: rgb(220, 53, 69);"></i> ${salida.posicion_anterior}</h1>
 </div>
 <div class="col-md-2">
 <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded h-100">
@@ -154,7 +154,7 @@ ${puesto.youtube_url}`);
 </div>
 <div class="col-md-3 d-flex align-items-center">
 <div class="card-body">
-<div class="d-flex justify-content-end gap-4 text-center align-items-center">
+<div class="d-flex gap-4 text-center align-items-center">
 <div>
 <p class="mb-1">Max:</p>
 <p><i class="fa-solid fa-trophy"></i>  ${salida.peak}</p>
