@@ -98,7 +98,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p class="stats"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
 
