@@ -86,6 +86,8 @@ const puestoRenderer = {
                     <div class="card-body">
                         <h3 class="card-title">${puesto.titulo}</h3>
                         <p class="card-text">${puesto.artistas}</p>
+                        <p class="card-text">HOLA</p>
+                        
                     </div>
                 </div>
                 <div class="col-2 col-md-3 d-flex align-items-center">
@@ -98,7 +100,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <p class="card-text"><i class="fa-solid fa-trophy"></i> ${puesto.peak}<i class="fa-regular fa-circle-down fa-width-auto" style="color: rgb(220, 53, 69);"></i></p>
+                                    <p class="card-text"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
 
