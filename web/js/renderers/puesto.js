@@ -117,7 +117,7 @@ const puestoRenderer = {
 
         let card = parseHTML(html);
 
-        const boton = card.querySelector(`#copiar - ${puesto.posicion} `);
+        const boton = card.querySelector(`#copiar-${puesto.posicion}`);
 
         boton.addEventListener("click", async () => {
             try {
