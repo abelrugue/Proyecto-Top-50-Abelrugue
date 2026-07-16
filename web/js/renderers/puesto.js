@@ -92,16 +92,36 @@ const puestoRenderer = {
                     <div class="card-body">
                         <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 justify-content-end">
                             <div>
-                                <p class="mb-1">Max:</p>
-                                <p ${color_num}><i class="fa-solid fa-trophy"></i>  ${puesto.peak}</p>
+                                <div class="d-none d-sm-block">
+                                    <p class="mb-1">Max:</p>
+                                    <p ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                </div>
+
+                                <div class="d-block d-sm-none" ${color_num}>
+                                    <i class="fa-solid fa-trophy"></i> ${puesto.peak}
+                                </div>
                             </div>
+
                             <div>
-                                <p class="mb-1">Sem:</p>
-                                <p><i class="fa-solid fa-calendar"></i>  ${puesto.sem}</p>
+                                <div class="d-none d-sm-block">
+                                    <p class="mb-1">Sem:</p>
+                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                </div>
+
+                                <div class="d-block d-sm-none">
+                                    <i class="fa-solid fa-calendar"></i> ${puesto.sem}
+                                </div>
                             </div>
+
                             <div>
-                                <p class="mb-1">Ant:</p>
-                                <p><i class="fa-solid fa-clock"></i>  ${posicion_anterior}</p>
+                                <div class="d-none d-sm-block">
+                                    <p class="mb-1">Ant:</p>
+                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                </div>
+
+                                <div class="d-block d-sm-none">
+                                    <i class="fa-solid fa-clock"></i> ${posicion_anterior}
+                                </div>
                             </div>
                         </div>
                     </div>
