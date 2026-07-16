@@ -72,22 +72,22 @@ const puestoRenderer = {
         let html = `
         <div class="card mb-3" ${num1}>
             <div class="row m-0">
-                <div class="col-2" >
+                <div class="col-2 col-md-2" >
                     <h1 class="card-title" >${puesto.posicion}</h1>
                     <h4 class="card-text" ${color}>${fa} ${mas}${variacion}</h4>
                     <h4 class="card-text">${hito}</h4>
                     <h4 class="card-text">${hito_rdp}</h4>
                 </div>
-                <div class="col-3">
+                <div class="col-3 col-md-2">
                     <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
-                <div class="col-5 d-flex align-items-center">
+                <div class="col-5 col-md-4 d-flex align-items-center">
                     <div class="card-body">
                         <h3 class="card-title">${puesto.titulo}</h3>
                         <p class="card-text">${puesto.artistas}</p>
                     </div>
                 </div>
-                <div class="col-2 d-flex align-items-center">
+                <div class="col-2 col-md-3 d-flex align-items-center">
                     <div class="card-body">
                         <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 justify-content-end">
                             <div>
@@ -106,7 +106,7 @@ const puestoRenderer = {
                     </div>
                 </div>
 
-                <div class="col-1 d-flex align-items-center justify-content-center">
+                <div class="col-1 col-md-1 d-flex align-items-center justify-content-center">
                     <button class="btn btn-sm btn-outline-secondary" id="copiar-${puesto.posicion}">
                         <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i></button>
                 </div>
