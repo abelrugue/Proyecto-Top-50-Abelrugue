@@ -59,7 +59,7 @@ const puestoRenderer = {
 
         let color_num = "";
         if (puesto.es_nuevo_peak) {
-            color_num = `style="color: rgb(255, 170, 0);"`;
+            color_num = "color: rgb(255, 170, 0);";
         }
 
         let num1 = "";
@@ -95,10 +95,10 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
-                                    <p style="white-space: nowrap;" ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p style="white-space: nowrap; ${color_num}"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
 
-                                <div class="d-block d-sm-none stats" ${color_num}>
+                                <div class="d-block d-sm-none stats" style="${color_num}">
                                     <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
