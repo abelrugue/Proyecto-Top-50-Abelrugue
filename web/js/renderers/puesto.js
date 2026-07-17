@@ -89,9 +89,9 @@ const puestoRenderer = {
 
                     </div>
                 </div>
-                <div class="col-3 col-md-3 d-flex align-items-center">
+                <div class="col-3 col-md-3 d-flex align-items-end">
                     <div class="card-body">
-                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 ">
+                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 ">
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
