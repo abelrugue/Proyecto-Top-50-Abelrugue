@@ -91,7 +91,7 @@ const puestoRenderer = {
                 </div>
                 <div class="col-2 col-md-3 d-flex align-items-end">
                     <div class="card-body">
-                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 ">
+                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
