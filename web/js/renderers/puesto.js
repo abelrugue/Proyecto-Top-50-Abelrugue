@@ -99,7 +99,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p class="stats"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
 
@@ -110,7 +110,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                    <p class="stats"><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
                                 </div>
                             </div>
 
@@ -121,7 +121,7 @@ const puestoRenderer = {
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                    <p class="stats"><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
                                 </div>
                             </div>
                         </div>
