@@ -143,6 +143,7 @@ img.photo-user-avatar {
     .stats p {
         font-size: .8rem;
         white-space: nowrap;
+        min-width: 42px;
     }
 
     .btn-copy {
