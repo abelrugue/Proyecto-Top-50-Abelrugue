@@ -82,14 +82,14 @@ const puestoRenderer = {
                 <div class="col-2 col-md-2">
                     <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
-                <div class="col-4 col-md-4 d-flex align-items-center">
+                <div class="col-5 col-md-4 d-flex align-items-center">
                     <div class="card-body">
                         <h3 class="card-title">${puesto.titulo}</h3>
                         <p class="card-text">${puesto.artistas}</p>
 
                     </div>
                 </div>
-                <div class="col-3 col-md-3 d-flex align-items-end">
+                <div class="col-2 col-md-3 d-flex align-items-end">
                     <div class="card-body">
                         <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 ">
                             <div>
