@@ -109,7 +109,7 @@ img.photo-user-avatar {
     border-color: rgb(220, 53, 69);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 760px) {
 
     .card {
         padding: 6px;
@@ -160,13 +160,5 @@ img.photo-user-avatar {
         -webkit-line-clamp: 2;
     }
 
-}
-
-@media (max-width: 870px) {
-    .stats p {
-        font-size: .8rem;
-        white-space: nowrap;
-        min-width: 42px;
-    }
 }
 
