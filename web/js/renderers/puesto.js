@@ -2,7 +2,6 @@
 import { parseHTML } from "/js/utils/parseHTML.js";
 const puestoRenderer = {
     asCard: function (puesto, hitos, rdps) {
-        throw new Error("Estoy aquí");
         let fa = null;
         let mas = "";
         let variacion = "";
@@ -87,7 +86,6 @@ const puestoRenderer = {
                     <div class="card-body">
                         <h3 class="card-title">${puesto.titulo}</h3>
                         <p class="card-text">${puesto.artistas}</p>
-                        <p class="card-text">HOLA</p>
 
                     </div>
                 </div>
