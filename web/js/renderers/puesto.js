@@ -95,7 +95,7 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
-                                    <p ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p style="white-space: nowrap;" ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none stats" ${color_num}>
@@ -106,7 +106,7 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Sem:</p>
-                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                    <p style="white-space: nowrap;"><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none stats">
@@ -117,7 +117,7 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Ant:</p>
-                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                    <p style="white-space: nowrap;"><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none stats">
