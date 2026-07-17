@@ -128,9 +128,9 @@ const puestoRenderer = {
                     </div>
                 </div>
 
-                <div class="col-2 col-md-1 d-flex align-items-center justify-content-center">
+                <div class="col-1 col-md-1 d-flex align-items-center justify-content-center">
                     <button class="btn btn-sm btn-outline-secondary" id="copiar-${puesto.posicion}">
-                        <i class="fa-regular fa-copy fa-2xs" style="color: rgb(132, 132, 132);"></i>
+                        <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i>
                     </button>
                 </div>
 
