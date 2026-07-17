@@ -164,21 +164,21 @@ ${puesto.youtube_url}`);
 
 
         let html = `
-        <div class="card mb-3" style="border: 2px solid; border-color: rgb(220, 53, 69);">
-            <div class="row m-0">
-                <div class="col-md-2" >
+        <div class="card mb-2 p-1" style="border: 2px solid; border-color: rgb(220, 53, 69);">
+            <div class="row g-1 align-items-center m-0">
+                <div class="col-2 col-md-2" >
                     <h1 class="card-title" ><i class="fa-solid fa-xmark fa-lg" style="color: rgb(220, 53, 69);"></i> ${salida.posicion_anterior}</h1>
                 </div>
-                <div class="col-md-2">
-                    <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded h-100">
+                <div class="col-2 col-md-2">
+                    <img src="https://quinpart.com/imgs/placeholder.svg" class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
-                <div class="col-md-4 d-flex align-items-center">
+                <div class="col-5 col-md-4 d-flex align-items-center">
                     <div class="card-body">
                         <h3 class="card-title">${salida.titulo}</h3>
                         <p class="card-text">${salida.artistas}</p>
                     </div>
                 </div>
-                <div class="col-md-3 d-flex align-items-center">
+                <div class="col-2 col-md-3 d-flex align-items-center">
                     <div class="card-body">
                         <div class="d-flex justify-content-center gap-4 text-center align-items-center">
                             <div>
@@ -192,7 +192,7 @@ ${puesto.youtube_url}`);
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1 d-flex align-items-center text-center">
+                <div class="col-1 col-md-1 d-flex align-items-center text-center">
                     <button class="btn btn-sm btn-outline-secondary" id="copiar-salida-${salida.posicion_anterior}">
                         <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i></button>
                 </div>
@@ -200,6 +200,8 @@ ${puesto.youtube_url}`);
             </div>
         </div>
          `;
+
+        
 
         let card = parseHTML(html);
 
