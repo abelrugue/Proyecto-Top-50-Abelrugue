@@ -89,7 +89,7 @@ const puestoRenderer = {
 
                     </div>
                 </div>
-                <div class="col-2 col-md-3 d-flex align-items-center">
+                <div class="col-3 col-md-3 d-flex align-items-center">
                     <div class="card-body">
                         <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 ">
                             <div>
