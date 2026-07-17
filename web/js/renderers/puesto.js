@@ -98,8 +98,8 @@ const puestoRenderer = {
                                     <p ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
 
-                                <div class="d-block d-sm-none" ${color_num}>
-                                    <p class="stats"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                <div class="d-block d-sm-none stats" ${color_num}>
+                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
                                 </div>
                             </div>
 
@@ -109,8 +109,8 @@ const puestoRenderer = {
                                     <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
                                 </div>
 
-                                <div class="d-block d-sm-none">
-                                    <p class="stats"><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                <div class="d-block d-sm-none stats">
+                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
                                 </div>
                             </div>
 
@@ -120,8 +120,8 @@ const puestoRenderer = {
                                     <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
                                 </div>
 
-                                <div class="d-block d-sm-none">
-                                    <p class="stats"><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                <div class="d-block d-sm-none stats">
+                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
                                 </div>
                             </div>
                         </div>
