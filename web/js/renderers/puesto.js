@@ -95,33 +95,33 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
-                                    <p ${color_num}><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p ${color_num}><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none" ${color_num}>
-                                    <p class="card-text"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p><i class="fa-solid fa-trophy"></i>${puesto.peak}</p>
                                 </div>
                             </div>
 
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Sem:</p>
-                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                    <p><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <p><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
+                                    <p><i class="fa-solid fa-calendar"></i>${puesto.sem}</p>
                                 </div>
                             </div>
 
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Ant:</p>
-                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                    <p><i class="fa-solid fa-clock"></i>${posicion_anterior}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none">
-                                    <p><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
+                                    <p><i class="fa-solid fa-clock"></i>${posicion_anterior}</p>
                                 </div>
                             </div>
                         </div>
