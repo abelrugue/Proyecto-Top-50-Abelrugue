@@ -180,7 +180,7 @@ ${puesto.youtube_url}`);
                 </div>
                 <div class="col-2 col-md-3 d-flex align-items-center">
                     <div class="card-body">
-                        <div class="d-flex justify-content-center gap-4 text-center align-items-center">
+                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
