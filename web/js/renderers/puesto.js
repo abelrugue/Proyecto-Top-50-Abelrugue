@@ -182,12 +182,24 @@ ${puesto.youtube_url}`);
                     <div class="card-body">
                         <div class="d-flex justify-content-center gap-4 text-center align-items-center">
                             <div>
-                                <p class="mb-1">Max:</p>
-                                <p><i class="fa-solid fa-trophy"></i>  ${salida.peak}</p>
+                                <div class="d-none d-sm-block">
+                                    <p class="mb-1">Max:</p>
+                                    <p style="white-space: nowrap;"><i class="fa-solid fa-trophy"></i> ${salida.peak}</p>
+                                </div>
+
+                                <div class="d-block d-sm-none stats">
+                                    <p><i class="fa-solid fa-trophy"></i> ${salida.peak}</p>
+                                </div>
                             </div>
                             <div>
-                                <p class="mb-1">Sem:</p>
-                                <p><i class="fa-solid fa-calendar"></i>  ${salida.sem}</p>
+                                <div class="d-none d-sm-block">
+                                    <p class="mb-1">Sem:</p>
+                                    <p style="white-space: nowrap;"><i class="fa-solid fa-calendar"></i> ${salida.sem}</p>
+                                </div>
+
+                                <div class="d-block d-sm-none stats">
+                                    <p><i class="fa-solid fa-calendar"></i> ${salida.sem}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
