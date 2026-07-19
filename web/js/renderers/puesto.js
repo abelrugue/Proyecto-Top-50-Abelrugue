@@ -171,7 +171,7 @@ ${puesto.youtube_url}`);
                     <h1 class="card-title" ><i class="fa-solid fa-xmark fa-lg" style="color: rgb(220, 53, 69);"></i> ${salida.posicion_anterior}</h1>
                 </div>
                 <div class="col-2 col-md-2">
-                    <img src="${salida.portada_url && salida.portada_url !== 'NO_ENCONTRADA' ? puesto.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
+                    <img src="${salida.portada_url && salida.portada_url !== 'NO_ENCONTRADA' ? salida.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
                     class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
                 <div class="col-5 col-md-4 d-flex align-items-center">
