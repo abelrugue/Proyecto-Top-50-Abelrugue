@@ -98,7 +98,7 @@ function asCard(cancion) {
                         </div>
 
                         <div class="col-8">
-                            <h3 class="card-title mb-1">${cancion.titulo}</h3>
+                            <h2 class="card-title mb-1">${cancion.titulo}</h2>
                             <h5 class="card-text">${cancion.artistas}</h5>
                         </div>
 
