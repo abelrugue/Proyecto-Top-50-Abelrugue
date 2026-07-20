@@ -29,7 +29,7 @@ async function asCardGallery() {
         .order("fecha_debut");
     let html_total = '';
     for (let cancion of data) {
-        html_total += this.asCard(cancion);
+        html_total += asCard(cancion);
     }
     
     bodyDiv.innerHTML = html;
