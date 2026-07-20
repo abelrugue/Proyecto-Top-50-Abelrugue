@@ -35,7 +35,7 @@ async function asCardGallery() {
     bodyDiv.innerHTML = html_total;
 }
 
-async function asCard(cancion) {
+function asCard(cancion) {
 
     let html = `
             <div class="card mb-2 p-1">
