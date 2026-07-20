@@ -38,6 +38,7 @@ async function asCardGallery() {
 function asCard(cancion) {
 
     let html = `
+            <br>
             <div class="card mb-2 p-1">
                 <div class="row g-1 align-items-center m-0">
 
@@ -48,8 +49,8 @@ function asCard(cancion) {
 
                     <div class="col-8 col-md-8 d-flex align-items-center">
                         <div class="card-body">
-                            <h3 class="card-title">${cancion.titulo}</h3>
-                            <p class="card-text">${cancion.artistas}</p>
+                            <h1 class="card-title">${cancion.titulo}</h1>
+                            <h3 class="card-text">${cancion.artistas}</h3>
 
                             <ul>
                                 <li>

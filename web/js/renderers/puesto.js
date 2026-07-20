@@ -67,6 +67,11 @@ const puestoRenderer = {
             num1 = `style="background-color: rgb(255, 236, 236);"`;
         }
 
+        let repeticion = "";
+        if (puesto.numeros_1){
+            repeticion = `x${puesto.numeros_1}`
+        }
+
         
 
 
@@ -96,11 +101,11 @@ const puestoRenderer = {
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
-                                    <p style="white-space: nowrap; ${color_num}"><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p style="white-space: nowrap; ${color_num}"><i class="fa-solid fa-trophy"></i> ${puesto.peak}${repeticion}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none stats" style="${color_num}">
-                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}</p>
+                                    <p><i class="fa-solid fa-trophy"></i> ${puesto.peak}${repeticion}</p>
                                 </div>
                             </div>
 
@@ -147,7 +152,7 @@ const puestoRenderer = {
             try {
                 await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${hito_rdp_mensaje}${hito_mensaje}${puesto.titulo.toUpperCase()} (${mas}${variacion_mensajes}) ${puesto.artistas}
 
-Max. ${puesto.peak}, Sem. ${puesto.sem}
+Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem}
 
 ${puesto.youtube_url}`);
 
@@ -163,6 +168,10 @@ ${puesto.youtube_url}`);
     asCardSalida: function (salida) {
 
 
+        let repeticion = "";
+        if (salida.numeros_1){
+            repeticion = `x${salida.numeros_1}`
+        }
 
         let html = `
         <div class="card mb-2 p-1" style="border: 2px solid; border-color: rgb(220, 53, 69);">
@@ -186,11 +195,11 @@ ${puesto.youtube_url}`);
                             <div>
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
-                                    <p style="white-space: nowrap;"><i class="fa-solid fa-trophy"></i> ${salida.peak}</p>
+                                    <p style="white-space: nowrap;"><i class="fa-solid fa-trophy"></i> ${salida.peak}${repeticion}</p>
                                 </div>
 
                                 <div class="d-block d-sm-none stats">
-                                    <p><i class="fa-solid fa-trophy"></i> ${salida.peak}</p>
+                                    <p><i class="fa-solid fa-trophy"></i> ${salida.peak}${repeticion}</p>
                                 </div>
                             </div>
                             <div>
@@ -225,7 +234,7 @@ ${puesto.youtube_url}`);
             try {
                 await navigator.clipboard.writeText(`❌ ${salida.posicion_anterior}.‎ ${salida.titulo.toUpperCase()} (${salida.artistas})
 
-Max. ${salida.peak}, Sem. ${salida.sem}
+Max. ${salida.peak}${repeticion}, Sem. ${salida.sem}
 
 Recorrido: ${salida.recorrido}-X
 
