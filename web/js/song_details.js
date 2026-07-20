@@ -37,6 +37,11 @@ async function asCardGallery() {
 
 function asCard(cancion) {
 
+    let repeticion = "";
+        if (cancion.numeros_1 > 1){
+            repeticion = `x${cancion.numeros_1}`
+        }
+
     let html = `
             <br>
             <div class="card mb-2 p-1">
@@ -50,11 +55,11 @@ function asCard(cancion) {
                     <div class="col-8 col-md-8 d-flex align-items-center">
                         <div class="card-body">
                             <h1 class="card-title">${cancion.titulo}</h1>
-                            <h3 class="card-text">${cancion.artistas}</h3>
+                            <h4 class="card-text">${cancion.artistas}</h4>
 
                             <ul>
                                 <li>
-                                    <p class="card-text">Max: <i class="fa-solid fa-trophy"></i> ${cancion.peak}</p>
+                                    <p class="card-text">Max: <i class="fa-solid fa-trophy"></i> ${cancion.peak}${repeticion}</p>
                                 </li>
                                 <li>
                                     <p class="card-text">Sem: <i class="fa-solid fa-calendar"></i> ${cancion.sem}</p>
@@ -64,6 +69,18 @@ function asCard(cancion) {
                                 </li>
                                 <li>
                                     <p class="card-text">Recorrido: ${cancion.recorrido}</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Semanas top 5: ${cancion.top_5}</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Semanas top 10: ${cancion.top_10}</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Fecha debut: ${cancion.fecha_debut}</p>
+                                </li>
+                                <li>
+                                    <p class="card-text">Fecha peak: ${cancion.fecha_peak}</p>
                                 </li>
                             </ul>
     
