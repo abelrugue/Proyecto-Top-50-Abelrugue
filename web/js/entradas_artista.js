@@ -35,9 +35,8 @@ async function asCardGallery() {
     let { data, error } = await supabase
         .from("vista_artista_canciones")
         .select("*")
-        //.eq("nombre", inputname.value.trim())
-        .order("fecha_debut")
-        .range(500, 99999999999);
+        .eq("nombre", inputname.value.trim())
+        .order("fecha_debut");
     let html = '';
     for (let cancion of data) {
         html += cancionRenderer.asCard(cancion, "entradas");
