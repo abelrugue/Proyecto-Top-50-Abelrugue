@@ -167,7 +167,7 @@ ${puesto.youtube_url}`);
         let html = `
         <div class="card mb-2 p-1" style="border: 2px solid; border-color: rgb(220, 53, 69);">
             <div class="row g-1 align-items-center m-0">
-                <div class="col-2 col-md-2" >
+                <div class="col-2 col-md-2 text-center" >
                     <h1 class="card-title" ><i class="fa-solid fa-xmark fa-lg" style="color: rgb(220, 53, 69);"></i> ${salida.posicion_anterior}</h1>
                 </div>
                 <div class="col-2 col-md-2">

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/song_details.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body>
+    <div id="page-header"></div>
+    <div class="container">
+        <div id="errors"></div>
+
+        <form id="team-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="cancion-input">Nombre de la canción</label>
+                    <input type="text" class="form-control" id="cancion-input" name="cancion"
+                        placeholder="Nombre de la canción" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="button" id="btn-song-details" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+        <div id="song-div">
+
+        </div>
+    </div>
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>
