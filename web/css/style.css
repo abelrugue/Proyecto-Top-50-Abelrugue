@@ -98,20 +98,14 @@ img.photo-user-avatar {
     color: white;
 }
 
-.max-cell {
-    max-width: 250px;
-    white-space: normal;
-    word-break: break-word;
-}
-
 .card-salida {
     border: 2px solid;
     border-color: rgb(220, 53, 69);
 }
 
 table {
-    table-layout: fixed;
     width: 100%;
+    min-width: 1200px;
 }
 
 .artistas-cell {
