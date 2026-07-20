@@ -32,7 +32,7 @@ async function asCardGallery() {
         html_total += asCard(cancion);
     }
     
-    bodyDiv.innerHTML = html;
+    bodyDiv.innerHTML = html_total;
 }
 
 async function asCard(cancion) {
