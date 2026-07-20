@@ -59,28 +59,28 @@ function asCard(cancion) {
 
                             <ul>
                                 <li>
-                                    <p class="card-text">Max: <i class="fa-solid fa-trophy"></i> ${cancion.peak}${repeticion}</p>
+                                    <p class="card-text"><b>Max:</b> <i class="fa-solid fa-trophy"></i> ${cancion.peak}${repeticion}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Sem: <i class="fa-solid fa-calendar"></i> ${cancion.sem}</p>
+                                    <p class="card-text"><b>Sem:</b> <i class="fa-solid fa-calendar"></i> ${cancion.sem}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Punt: ${cancion.puntuacion}</p>
+                                    <p class="card-text"><b>Punt:</b> ${cancion.puntuacion}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Recorrido: ${cancion.recorrido}</p>
+                                    <p class="card-text"><b>Recorrido:</b> ${cancion.recorrido}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Semanas top 5: ${cancion.top_5}</p>
+                                    <p class="card-text"><b>Semanas top 5:</b> ${cancion.top_5}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Semanas top 10: ${cancion.top_10}</p>
+                                    <p class="card-text"><b>Semanas top 10:</b> ${cancion.top_10}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Fecha debut: ${cancion.fecha_debut}</p>
+                                    <p class="card-text"><b>Fecha debut:</b> ${cancion.fecha_debut}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text">Fecha peak: ${cancion.fecha_peak}</p>
+                                    <p class="card-text"><b>Fecha peak:</b> ${cancion.fecha_peak}</p>
                                 </li>
                             </ul>
     
