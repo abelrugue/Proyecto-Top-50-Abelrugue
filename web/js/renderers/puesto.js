@@ -68,7 +68,7 @@ const puestoRenderer = {
         }
 
         let repeticion = "";
-        if (puesto.numeros_1){
+        if (puesto.numeros_1 > 1){
             repeticion = `x${puesto.numeros_1}`
         }
 
@@ -169,7 +169,7 @@ ${puesto.youtube_url}`);
 
 
         let repeticion = "";
-        if (salida.numeros_1){
+        if (salida.numeros_1 > 1){
             repeticion = `x${salida.numeros_1}`
         }
 
