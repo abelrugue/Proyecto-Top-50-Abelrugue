@@ -109,18 +109,18 @@ table {
 }
 
 .artistas-cell {
-    width: 220px;
+    width: 200px;
     white-space: normal;
     word-break: break-word;
 }
 
 .portada-cell{
-    width:70px;
+    width:60px;
 }
 
 .portada-img{
-    width:60px;
-    height:60px;
+    width:50px;
+    height:50px;
     object-fit:cover;
 }
 
