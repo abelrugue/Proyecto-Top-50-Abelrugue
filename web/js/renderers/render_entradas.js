@@ -17,10 +17,10 @@ const cancionRenderer = {
         }
 
         let html = `<tr ${num1}>
-        <td scope="col"><img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
-         class="img-fluid rounded w-100 h-100 object-fit-cover"></td>
+        <td scope="col" class="portada-cell"><img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
+         class="rounded portada-img"></td>
 <td scope="col">${cancion.titulo}</td>
-<td scope="col" class="max-cell">${cancion.artistas}</td>
+<td scope="col" class="artistas-cell">${cancion.artistas}</td>
 <td scope="col">${cancion.peak}</td>
 <td scope="col">${cancion.sem}</td>
 <td scope="col">${cancion.puntuacion}</td>

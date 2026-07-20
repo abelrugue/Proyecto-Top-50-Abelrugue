@@ -109,6 +109,27 @@ img.photo-user-avatar {
     border-color: rgb(220, 53, 69);
 }
 
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.artistas-cell {
+    width: 220px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.portada-cell{
+    width:70px;
+}
+
+.portada-img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+}
+
 @media (max-width: 760px) {
 
     .card {
