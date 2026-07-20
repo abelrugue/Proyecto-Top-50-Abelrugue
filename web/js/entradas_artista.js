@@ -37,7 +37,7 @@ async function asCardGallery() {
         .select("*")
         //.eq("nombre", inputname.value.trim())
         .order("fecha_debut")
-        .range(500, 999);
+        .range(500, 99999999999);
     let html = '';
     for (let cancion of data) {
         html += cancionRenderer.asCard(cancion, "entradas");
