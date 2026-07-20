@@ -94,7 +94,7 @@ function asCard(cancion) {
 
                         <div class="col-4">
                             <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
-                            class="img-fluid rounded w-100 object-fit-cover">
+                            class="img-fluid rounded w-100 h-100 object-fit-cover">
                         </div>
 
                         <div class="col-8">
@@ -136,35 +136,7 @@ function asCard(cancion) {
 
 
             </div>
-
-            <div class="card mb-2 p-1">
-
-                <!-- MÓVIL -->
-                <div class="d-md-none">
-
-                    <div class="row g-2 align-items-center">
-
-                        <div class="col-4">
-                            <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA'
-                                ? cancion.portada_url
-                                : 'https://quinpart.com/imgs/placeholder.svg'}"
-                                class="img-fluid rounded w-100 object-fit-cover">
-                        </div>
-
-                        <div class="col-8">
-                            <h3 class="card-title mb-1">${cancion.titulo}</h3>
-                            <h5 class="card-text">${cancion.artistas}</h5>
-                        </div>
-
-                    </div>
-
-                    <ul class="mt-2 mb-1">
-                        ...
-                    </ul>
-
-                </div>
-
-            </div>
+            
             `;
 
             return html;
