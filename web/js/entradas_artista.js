@@ -18,17 +18,23 @@ async function main() {
             btn_n1.addEventListener("click", asCardGallery_n1);
         }
 
-        document.getElementById("name-input").addEventListener("keydown", e => {
-            if (e.key === "Enter") {
-                asCardGallery();
-            }
-        });
+        let nameinput = document.getElementById("name-input");
+        if (nameinput) {
+            nameinput.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    asCardGallery();
+                }
+            });
+        }
 
-        document.getElementById("name-input-n1").addEventListener("keydown", e => {
-            if (e.key === "Enter") {
-                asCardGallery_n1();
-            }
-        });
+        let nameinputn1 = document.getElementById("name-input-n1");
+        if (nameinputn1) {
+            nameinputn1.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    asCardGallery_n1();
+                }
+            });
+        }
 
 
 
