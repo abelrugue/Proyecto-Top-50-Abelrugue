@@ -12,6 +12,18 @@ async function main() {
             }
         });
 
+        const params = new URLSearchParams(window.location.search);
+
+        const fecha = params.get("fecha");
+
+        if (!fecha) {
+            fecha = "2026-07-19";
+        }
+
+        document.getElementById("fecha-antigua-input").value = fecha;
+
+        await cargarLista(fecha);
+
 
 
     } catch (err) {
@@ -20,23 +32,19 @@ async function main() {
 }
 
 
-async function buscar() {
-    const fechainput = document.getElementById("fecha-antigua-input").value;
-    if (!fechainput) return;
+function buscar() {
+    const fecha = document.getElementById("fecha-antigua-input").value;
+    if (!fecha) return;
 
-    window.location.href = `listas_antiguas.html?fecha=${fechainput}`;
+    history.pushState({}, "", `?fecha=${fecha}`);
+    cargarLista(fecha);
+
+
+}
+
+async function cargarLista(fecha) {
 
     let content = document.getElementById("content_antiguas");
-
-    const params = new URLSearchParams(window.location.search);
-
-    let fecha = params.get("fecha");
-
-    if (!fecha) {
-        fecha = "2026-07-19";
-    }
-
-    document.getElementById("fecha-antigua-input").value = fecha;
 
     let { data, error } = await supabase
         .rpc("vista_lista_antigua", {
