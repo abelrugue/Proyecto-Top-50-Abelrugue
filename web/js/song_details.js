@@ -9,14 +9,20 @@ async function main() {
 
         let btn = document.getElementById("btn-song-details");
         if (btn) {
-            btn.addEventListener("click", asCardGallery);
+            btn.addEventListener("click", buscar);
         }
 
         document.getElementById("cancion-input").addEventListener("keydown", e => {
             if (e.key === "Enter") {
-                asCardGallery();
+                buscar();
             }
         });
+
+        const params = new URLSearchParams(window.location.search);
+
+        const cancion = params.get("cancion") ?? "";
+
+        document.getElementById("cancion-input").value = cancion;
 
 
     } catch (err) {
@@ -24,14 +30,27 @@ async function main() {
     }
 }
 
-async function asCardGallery() {
-    let inputname = document.getElementById("cancion-input");
+function buscar() {
+    const cancion = document.getElementById("cancion-input").value;
+    if (!cancion) return;
+
+    history.pushState({}, "", `?cancion=${cancion}`);
+    
+    const lista = document.getElementById("song-div");
+    lista.replaceChildren();
+
+    asCardGallery(cancion);
+
+
+}
+
+async function asCardGallery(cancion) {
     let bodyDiv = document.getElementById("song-div");
 
     let { data, error } = await supabase
         .from("vista_canciones")
         .select("*")
-        .eq("titulo", inputname.value.trim())
+        .eq("titulo", cancion.trim())
         .order("fecha_debut");
     let html_total = '';
     for (let cancion of data) {
