@@ -33,6 +33,10 @@ function buscar() {
     if (!fecha) return;
 
     history.pushState({}, "", `?fecha=${fecha}`);
+    
+    const lista = document.getElementById("div-lista-antigua");
+    lista.replaceChildren();
+
     cargarLista(fecha);
 
 
