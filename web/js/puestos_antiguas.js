@@ -18,6 +18,9 @@ async function main() {
                 fecha_consulta: fecha
             })
             .single();
+        console.log(error2);
+        console.log(hitos);
+
         let { data: rdps, error: error3 } = await supabase
             .rpc("vista_record_permanencia", {
                 fecha_consulta: fecha
@@ -26,6 +29,10 @@ async function main() {
             .rpc("vista_salidas", {
                 fecha_consulta: fecha
             });
+        if (error) throw error;
+        if (error2) throw error2;
+        if (error3) throw error3;
+        if (error4) throw error4;
         content.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps, salidas));
         document.getElementById("title-lista-antigua").innerHTML = `Lista Top 50 de Abelrugue del ${fecha}`;
     } catch (err) {
