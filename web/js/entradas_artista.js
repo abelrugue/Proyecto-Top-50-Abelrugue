@@ -112,7 +112,7 @@ async function asCardGallery(artista) {
     for (let cancion of data) {
         html += cancionRenderer.asCard(cancion, "entradas");
     }
-    document.getElementById("title-entradas-de-x").innerHTML = `Entradas de ${inputname.value}`;
+    document.getElementById("title-entradas-de-x").innerHTML = `Entradas de ${artista}`;
     bodyDiv.innerHTML = html;
 }
 
@@ -128,7 +128,7 @@ async function asCardGallery_n1(artista) {
     for (let cancion of data) {
         html += cancionRenderer.asCard(cancion, "n1");
     }
-    document.getElementById("title-n1-de-x").innerHTML = `Números 1 de ${inputname.value}`;
+    document.getElementById("title-n1-de-x").innerHTML = `Números 1 de ${artista}`;
     bodyDiv.innerHTML = html;
 }
 
