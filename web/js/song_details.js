@@ -7,6 +7,7 @@ import { supabase } from "./supabase.js";
 async function main() {
     try {
 
+        /*
         let btn = document.getElementById("btn-song-details");
         if (btn) {
             btn.addEventListener("click", buscar);
@@ -18,11 +19,19 @@ async function main() {
             }
         });
 
+        */
+        document.getElementById("song-form").addEventListener("submit", e => {
+            e.preventDefault();
+            buscar();
+        });
+
         const params = new URLSearchParams(window.location.search);
 
         const cancion = params.get("cancion") ?? "";
 
         document.getElementById("cancion-input").value = cancion;
+
+        await asCardGallery(cancion);
 
 
     } catch (err) {
@@ -35,7 +44,7 @@ function buscar() {
     if (!cancion) return;
 
     history.pushState({}, "", `?cancion=${cancion}`);
-    
+
     const lista = document.getElementById("song-div");
     lista.replaceChildren();
 
@@ -56,16 +65,16 @@ async function asCardGallery(cancion) {
     for (let cancion of data) {
         html_total += asCard(cancion);
     }
-    
+
     bodyDiv.innerHTML = html_total;
 }
 
 function asCard(cancion) {
 
     let repeticion = "";
-        if (cancion.numeros_1 > 1){
-            repeticion = `x${cancion.numeros_1}`
-        }
+    if (cancion.numeros_1 > 1) {
+        repeticion = `x${cancion.numeros_1}`
+    }
 
     let html = `
             <br>
@@ -164,7 +173,7 @@ function asCard(cancion) {
             
             `;
 
-            return html;
+    return html;
 
 }
 
