@@ -12,6 +12,12 @@ async function main() {
             btn.addEventListener("click", asCardGallery);
         }
 
+        document.getElementById("cancion-input").addEventListener("keydown", e => {
+            if (e.key === "Enter") {
+                asCardGallery();
+            }
+        });
+
 
     } catch (err) {
         messageRenderer.showErrorMessage(err);
