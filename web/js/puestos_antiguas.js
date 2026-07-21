@@ -19,6 +19,7 @@ async function main() {
     }
 }
 
+
 function buscar() {
     const fechainput = document.getElementById("fecha-antigua-input").value;
     if (!fechainput) return;
