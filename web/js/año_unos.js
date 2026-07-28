@@ -81,9 +81,8 @@ function asCard(cancion) {
 
                     </div>
                 </div>
-                    <div class="col-3 col-md-3 d-flex align-items-end">
-                        <div class="col-2 col-md-2 text-center" >
-                        <h3 class="card-title" >${cancion.fecha}</h3>
+                    <div class="col-3 col-md-3 d-flex align-items-center justify-content-center">
+                        <h3 class="mb-0" >${cancion.fecha}</h3>
                     </div>
                 </div>
 
