@@ -41,7 +41,7 @@ function buscar() {
 
 async function cargarLista(año) {
 
-    document.getElementById("title-año-unos").innerHTML = `Números 1 de ${fecha}`;
+    document.getElementById("title-año-unos").innerHTML = `Números 1 de ${año}`;
 
     let { data, error } = await supabase
         .rpc("vista_numeros_1", {
