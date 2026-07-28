@@ -15,7 +15,7 @@ async function main() {
 
         document.getElementById("año-input").value = año;
 
-        await asCardGallery(año);
+        await cargarLista(año);
 
 
 
