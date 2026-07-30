@@ -175,7 +175,7 @@ table {
         -webkit-line-clamp: 2;
     }
 
-    .semana-badge {
+    .badge.semana-badge {
         font-size: .8rem;
     }
 
@@ -184,8 +184,8 @@ table {
 
 
 @media (min-width: 768px) {
-    .semana-badge {
-        font-size: 2rem;
+    .badge.semana-badge {
+        font-size: 1.9rem;
         padding: .5rem .9rem;
     }
 }
