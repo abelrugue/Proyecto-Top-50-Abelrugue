@@ -53,12 +53,21 @@ select {
     width: 200px;
     text-align: right;
 }
-
+/*
 div.title-block {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
     background-color: #333333;
+}
+*/
+div.title-block {
+    text-align: center;
+    background: linear-gradient(135deg,#1db954,#151515);
+    color:white;
+    border-radius:20px;
+    padding:2rem;
+    margin-bottom:1rem;
 }
 
 #title {
