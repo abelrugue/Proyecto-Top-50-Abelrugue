@@ -77,15 +77,15 @@ function asCard(cancion) {
                     <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
                     class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
-                <div class="col-5 col-md-5 d-flex align-items-center">
+                <div class="col-6 col-md-6 d-flex align-items-center">
                     <div class="card-body">
                         <h3 class="card-title">${cancion.titulo}</h3>
                         <p class="card-text">${cancion.artistas}</p>
 
                     </div>
                 </div>
-                    <div class="col-3 col-md-3 d-flex align-items-center justify-content-center">                       
-                        <span class="badge rounded-pill bg-success semana-badge">Semana ${cancion.num_semana}</span>
+                    <div class="col-2 col-md-2 d-flex align-items-center justify-content-center">                       
+                        <span class="badge rounded-pill bg-success semana-badge">Sem. ${cancion.num_semana}</span>
                         
                     </div>
                 </div>

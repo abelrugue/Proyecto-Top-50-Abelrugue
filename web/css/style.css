@@ -181,13 +181,11 @@ table {
 
 }
 
-.semana-badge{
-    font-size: 2rem !important;
-}
+
 
 @media (min-width: 768px) {
     .semana-badge {
-        font-size: 1.1rem;
+        font-size: 2rem;
         padding: .5rem .9rem;
     }
 }
