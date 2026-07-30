@@ -114,14 +114,14 @@ table {
     word-break: break-word;
 }
 
-.portada-cell{
-    width:55px;
+.portada-cell {
+    width: 55px;
 }
 
-.portada-img{
-    width:50px;
-    height:50px;
-    object-fit:cover;
+.portada-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
 
 @media (max-width: 760px) {
@@ -175,14 +175,16 @@ table {
         -webkit-line-clamp: 2;
     }
 
+    .semana-badge {
+        font-size: .8rem;
+    }
+
 }
 
-.semana-badge{
-    font-size: .8rem;
-}
 
-@media (min-width: 768px){
-    .semana-badge{
+
+@media (min-width: 768px) {
+    .semana-badge {
         font-size: 1.1rem;
         padding: .5rem .9rem;
     }
