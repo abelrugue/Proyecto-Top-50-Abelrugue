@@ -63,9 +63,8 @@ div.title-block {
 */
 div.title-block {
     text-align: center;
-    background: linear-gradient(135deg,#1db954,#151515);
+    background: linear-gradient(135deg,rgb(220, 53, 69),#151515);
     color:white;
-    border-radius:10px;
     padding:2rem;
     margin-bottom:1rem;
 }
