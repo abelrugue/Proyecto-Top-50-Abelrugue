@@ -65,7 +65,7 @@ div.title-block {
     text-align: center;
     background: linear-gradient(135deg,#1db954,#151515);
     color:white;
-    border-radius:20px;
+    border-radius:10px;
     padding:2rem;
     margin-bottom:1rem;
 }
@@ -73,8 +73,7 @@ div.title-block {
 #title {
     font-size: 300%;
     text-decoration: none;
-    color: #BBBBBB;
-    font-family: sans-serif;
+    color: white;
     margin-bottom: 0;
 }
 
