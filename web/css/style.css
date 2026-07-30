@@ -177,3 +177,13 @@ table {
 
 }
 
+.semana-badge{
+    font-size: .8rem;
+}
+
+@media (min-width: 768px){
+    .semana-badge{
+        font-size: 1.1rem;
+        padding: .5rem .9rem;
+    }
+}
