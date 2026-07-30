@@ -85,7 +85,7 @@ function asCard(cancion) {
                     </div>
                 </div>
                     <div class="col-3 col-md-3 d-flex align-items-center justify-content-center">                       
-                        <span class="badge rounded-pill bg-success">Semana ${cancion.num_semana}</span>
+                        <span class="badge rounded-pill bg-success card-text">Semana ${cancion.num_semana}</span>
                         
                     </div>
                 </div>
