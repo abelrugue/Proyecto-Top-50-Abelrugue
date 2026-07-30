@@ -64,11 +64,14 @@ async function cargarLista(año) {
 
 function asCard(cancion) {
 
+    let fecha = cancion.fecha;
+    let fechaFinal = `${fecha[8]}${fecha[9]}/${fecha[5]}${fecha[6]}`;
+
     let html = `
         <div class="card mb-2 p-1">
             <div class="row g-1 align-items-center m-0">
                 <div class="col-2 col-md-2 text-center" >
-                    <h3 class="mb-0" >${cancion.fecha}</h3>
+                    <h3 class="mb-0" >${fechaFinal}</h3>
                 </div>
                 <div class="col-2 col-md-2">
                     <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
@@ -82,7 +85,7 @@ function asCard(cancion) {
                     </div>
                 </div>
                     <div class="col-3 col-md-3 d-flex align-items-center justify-content-center">                       
-                        <h1 class="card-title" ><span class="badge rounded-pill bg-success">Semana ${cancion.num_semana}</span></h1>
+                        <span class="badge rounded-pill bg-success">Semana ${cancion.num_semana}</span>
                         
                     </div>
                 </div>
