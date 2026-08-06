@@ -33,7 +33,7 @@ function buscar() {
     if (!fecha) return;
 
     history.pushState({}, "", `?fecha=${fecha}`);
-    
+
     const lista = document.getElementById("div-lista-antigua");
     lista.replaceChildren();
 
@@ -67,7 +67,13 @@ async function cargarLista(fecha) {
     if (error) throw error;
     if (error2) throw error2;
     if (error3) throw error3;
-    if (error4) throw error4;
+
+    console.log(error4);
+
+    if (error4) {
+        console.error(error4);
+        throw new Error(error4.message);
+    }
 
     const lista = document.getElementById("div-lista-antigua");
     lista.replaceChildren();
