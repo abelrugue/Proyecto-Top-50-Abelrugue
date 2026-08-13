@@ -83,12 +83,15 @@ async function buscaArtistas() {
 
 
         if (opciones.length === 0) {
-            html_artistas += `<input type="text" class="form-control mb-2" id="artistas-${i}" name="fecha" placeholder="Artistas de ${titulo} (separados por ';')" required>
+            html_artistas += `<input type="text" class="form-control mb-2" id="artistas-${i}" placeholder="Artistas de ${titulo} (separados por ';')" required>
                             <input type="url" class="form-control" id="youtube-${i}" placeholder="https://youtu.be/..." required>`
 
 
         } else if (opciones.length === 1) {
-            html_artistas += opciones[0].artistas;
+            html_artistas += `${opciones[0].artistas} 
+                <button type="button" class="btn btn-outline-primary btn-sm ms-2" id="modificar-${i}">
+                    Modificar
+                </button>` ;
 
 
         } else {
@@ -100,13 +103,16 @@ async function buscaArtistas() {
                 </option>
                 `;
             }
-            html_artistas += `</select>`;
+            html_artistas += `</select>
+                <button type="button" class="btn btn-outline-primary btn-sm ms-2" id="modificar-${i}">
+                    Modificar
+                </button>`;
 
         }
         let html_fila = `<tr>
         <td scope="col">${i}</td>
         <td scope="col">${titulo}</td>
-        <td scope="col">${html_artistas}</td>
+        <td scope="col" id="artistas-cell-${i}">${html_artistas}</td>
 
         </tr>`;
         html += html_fila;
@@ -138,6 +144,172 @@ async function buscaArtistas() {
 
 }
 
+function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") {
+
+    const celda = document.getElementById(`artistas-cell-${i}`);
+
+    celda.innerHTML = `
+        <input type="text"
+               class="form-control mb-2"
+               id="artistas-mod-${i}"
+               value="${artistasActuales}"
+               placeholder="Artistas separados por ';'">
+
+        <input type="url"
+               class="form-control mb-2"
+               id="youtube-mod-${i}"
+               value="${youtubeActual}"
+               placeholder="https://youtu.be/...">
+
+        <button type="button"
+                class="btn btn-success btn-sm me-1"
+                id="guardar-mod-${i}">
+            Guardar
+        </button>
+
+        <button type="button"
+                class="btn btn-secondary btn-sm"
+                id="cancelar-mod-${i}">
+            Cancelar
+        </button>
+    `;
+
+    document.getElementById(`guardar-mod-${i}`).addEventListener("click", () => {
+        guardarModificacion(i);
+    });
+
+    document.getElementById(`cancelar-mod-${i}`).addEventListener("click", () => {
+        // Volvemos a buscar la canción original
+        const opciones = data.canciones[titulo];
+
+        let html_artistas = "";
+
+        if (opciones.length === 0) {
+
+            html_artistas = `
+                <input type="text"
+                       class="form-control mb-2"
+                       id="artistas-${i}"
+                       placeholder="Artistas de ${titulo} (separados por ';')"
+                       required>
+
+                <input type="url"
+                       class="form-control"
+                       id="youtube-${i}"
+                       placeholder="https://youtu.be/..."
+                       required>
+            `;
+
+        } else if (opciones.length === 1) {
+
+            html_artistas = `
+                ${opciones[0].artistas}
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm ms-2"
+                        id="modificar-${i}">
+                    Modificar
+                </button>
+            `;
+
+        } else {
+
+            html_artistas = `
+                <select class="form-select" id="cancion-${i}">
+            `;
+
+            for (const cancion of opciones) {
+                html_artistas += `
+                    <option value="${cancion.id}">
+                        ${cancion.artistas}
+                    </option>
+                `;
+            }
+
+            html_artistas += `
+                </select>
+
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm mt-2"
+                        id="modificar-${i}">
+                    Modificar
+                </button>
+            `;
+        }
+
+        celda.innerHTML = html_artistas;
+
+        const btn = document.getElementById(`modificar-${i}`);
+
+        if (btn) {
+            btn.addEventListener("click", () => {
+                const opciones = data.canciones[titulo];
+
+                let artistas = "";
+                let youtube = "";
+
+                if (opciones.length === 1) {
+                    artistas = opciones[0].artistas;
+                    youtube = opciones[0].youtube_url ?? "";
+                }
+
+                modificarCancion(i, titulo, artistas, youtube);
+            });
+        }
+    });
+}
+
+function guardarModificacion(i) {
+
+    const artistasInput = document.getElementById(`artistas-mod-${i}`);
+    const youtubeInput = document.getElementById(`youtube-mod-${i}`);
+
+    const artistas = artistasInput.value
+        .split(";")
+        .map(a => a.trim())
+        .filter(Boolean);
+
+    const youtube_url = youtubeInput.value.trim();
+
+    if (artistas.length === 0) {
+        alert("Debes introducir al menos un artista.");
+        return;
+    }
+
+    // Guardamos la modificación en la fila
+    const fila = titulos[i - 1];
+
+    if (!window.cancionesModificadas) {
+        window.cancionesModificadas = {};
+    }
+
+    window.cancionesModificadas[i] = {
+        titulo: fila,
+        artistas,
+        youtube_url
+    };
+
+    const celda = document.getElementById(`artistas-cell-${i}`);
+
+    celda.innerHTML = `
+        ${artistas.join(", ")}
+
+        <button type="button"
+                class="btn btn-outline-secondary btn-sm ms-2"
+                id="modificar-${i}">
+            Modificar
+        </button>
+    `;
+
+    document.getElementById(`modificar-${i}`).addEventListener("click", () => {
+        modificarCancion(
+            i,
+            fila,
+            artistas.join("; "),
+            youtube_url
+        );
+    });
+}
+
 async function insertaSemana() {
 
     const puestos_lista = [];
@@ -147,6 +319,20 @@ async function insertaSemana() {
 
         const titulo = titulos[i];
         const opciones = data.canciones[titulo];
+
+        if (window.cancionesModificadas?.[i + 1]) {
+
+            const modificada = window.cancionesModificadas[i + 1];
+
+            puestos_lista.push({
+                posicion: i + 1,
+                titulo: modificada.titulo,
+                artistas: modificada.artistas,
+                youtube_url: modificada.youtube_url
+            });
+
+            continue;
+        }
 
         if (opciones.length === 0) {
 
