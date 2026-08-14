@@ -213,3 +213,15 @@ table {
     width: 1%;
 }
 
+.tabla-canciones th:nth-child(2),
+.tabla-canciones td:nth-child(2) {
+    white-space: nowrap;
+}
+
+.tabla-canciones th:nth-child(3),
+.tabla-canciones td:nth-child(3) {
+    white-space: normal;
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
