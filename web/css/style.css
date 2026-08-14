@@ -53,6 +53,7 @@ select {
     width: 200px;
     text-align: right;
 }
+
 /*
 div.title-block {
     text-align: center;
@@ -63,10 +64,10 @@ div.title-block {
 */
 div.title-block {
     text-align: center;
-    background: linear-gradient(135deg,rgb(220, 53, 69),#151515);
-    color:white;
-    padding:2rem;
-    margin-bottom:1rem;
+    background: linear-gradient(135deg, rgb(220, 53, 69), #151515);
+    color: white;
+    padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 #title {
@@ -195,4 +196,27 @@ table {
         font-size: 1.3rem;
         padding: .5rem .9rem;
     }
+}
+
+.tabla-canciones {
+    width: 100%;
+    table-layout: auto;
+}
+
+.tabla-canciones th:first-child,
+.tabla-canciones td:first-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.tabla-canciones th:nth-child(2),
+.tabla-canciones td:nth-child(2) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.tabla-canciones th:nth-child(3),
+.tabla-canciones td:nth-child(3) {
+    width: 1%;
+    white-space: nowrap;
 }

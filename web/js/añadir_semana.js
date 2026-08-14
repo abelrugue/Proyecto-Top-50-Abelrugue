@@ -123,9 +123,9 @@ async function buscaArtistas() {
 
     let headDiv = document.getElementById("head-busca-artistas");
     let html_head = `<tr>
-                        <th scope="col" style="width: fit-content;">#</th>
-                        <th scope="col" style="width: fit-content;">Título</th>
-                        <th scope="col" style="width: fit-content;">Artistas</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Artistas</th>
                     </tr>`;
 
     let btnInsertarDiv = document.getElementById("div-btn-insertar");
