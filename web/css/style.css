@@ -208,15 +208,3 @@ table {
     width: 1%;
     white-space: nowrap;
 }
-
-.tabla-canciones th:nth-child(2),
-.tabla-canciones td:nth-child(2) {
-    width: 1%;
-    white-space: nowrap;
-}
-
-.tabla-canciones th:nth-child(3),
-.tabla-canciones td:nth-child(3) {
-    width: 1%;
-    white-space: nowrap;
-}
