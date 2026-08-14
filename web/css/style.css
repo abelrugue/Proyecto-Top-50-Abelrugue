@@ -199,29 +199,69 @@ table {
 }
 
 .tabla-canciones {
-    width: max-content;
+    width: 100%;
     table-layout: auto;
-}
-
-.tabla-canciones th,
-.tabla-canciones td {
-    white-space: nowrap;
 }
 
 .tabla-canciones th:first-child,
 .tabla-canciones td:first-child {
     width: 1%;
-}
-
-.tabla-canciones th:nth-child(2),
-.tabla-canciones td:nth-child(2) {
     white-space: nowrap;
 }
 
+/* Título */
+.tabla-canciones th:nth-child(2),
+.tabla-canciones td:nth-child(2) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Artistas */
 .tabla-canciones th:nth-child(3),
 .tabla-canciones td:nth-child(3) {
     white-space: normal;
-    max-width: 300px;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+
+    .table-responsive {
+        overflow-x: visible;
+    }
+
+    .tabla-canciones {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    /* # */
+    .tabla-canciones th:first-child,
+    .tabla-canciones td:first-child {
+        width: 8%;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Título */
+    .tabla-canciones th:nth-child(2),
+    .tabla-canciones td:nth-child(2) {
+        width: 42%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Artistas */
+    .tabla-canciones th:nth-child(3),
+    .tabla-canciones td:nth-child(3) {
+        width: 50%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .tabla-canciones td {
+        vertical-align: middle;
+    }
 }
 
