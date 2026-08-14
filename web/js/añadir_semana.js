@@ -136,6 +136,38 @@ async function buscaArtistas() {
     bodyDiv.innerHTML = html;
     btnInsertarDiv.innerHTML = html_div_btn;
 
+    document.querySelectorAll("[id^='modificar-']").forEach(btn => {
+
+        const i = Number(btn.id.replace("modificar-", ""));
+        const titulo = titulos[i - 1];
+        const opciones = data.canciones[titulo];
+
+        btn.addEventListener("click", () => {
+
+            let artistas = "";
+            let youtube = "";
+
+            if (opciones.length === 1) {
+                artistas = opciones[0].artistas;
+                youtube = opciones[0].youtube_url ?? "";
+                
+            } else if (opciones.length > 1) {
+
+                const select = document.getElementById(`cancion-${i}`);
+                const cancionSeleccionada = opciones.find(
+                    cancion => String(cancion.id) === select.value
+                );
+
+                if (cancionSeleccionada) {
+                    artistas = cancionSeleccionada.artistas;
+                    youtube = cancionSeleccionada.youtube_url ?? "";
+                }
+            }
+
+            modificarCancion(i, titulo, artistas, youtube);
+        });
+    });
+
     let btn_insertar_semana = document.getElementById("btn-insertar-semana");
 
     if (btn_insertar_semana) {
