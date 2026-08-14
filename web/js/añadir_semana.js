@@ -149,7 +149,7 @@ async function buscaArtistas() {
 
             if (opciones.length === 1) {
                 artistas = opciones[0].artistas;
-                youtube = opciones[0].youtube_url ?? "";
+                youtube = opciones[0].youtube_url;
 
             } else if (opciones.length > 1) {
 
@@ -160,7 +160,7 @@ async function buscaArtistas() {
 
                 if (cancionSeleccionada) {
                     artistas = cancionSeleccionada.artistas;
-                    youtube = cancionSeleccionada.youtube_url ?? "";
+                    youtube = cancionSeleccionada.youtube_url;
                 }
             }
 
@@ -184,7 +184,7 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
         <input type="text"
                class="form-control mb-2"
                id="artistas-mod-${i}"
-               value="${artistasActuales}"
+               value="${artistasActuales.replace(",", ";")}"
                placeholder="Artistas de ${titulo} (separados por ';')">
 
         <input type="url"
@@ -211,7 +211,12 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
     });
 
     document.getElementById(`cancelar-mod-${i}`).addEventListener("click", () => {
-        // Volvemos a buscar la canción original
+        // Eliminamos la modificación guardada
+        if (window.cancionesModificadas) {
+            delete window.cancionesModificadas[i];
+        }
+
+        // Volvemos a mostrar la canción original
         const opciones = data.canciones[titulo];
 
         let html_artistas = "";
@@ -281,20 +286,20 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
 
                 if (opciones.length === 1) {
                     artistas = opciones[0].artistas;
-                    youtube = opciones[0].youtube_url ?? "";
+                    youtube = opciones[0].youtube_url;
 
                 } else if (opciones.length > 1) {
 
-                const select = document.getElementById(`cancion-${i}`);
-                const cancionSeleccionada = opciones.find(
-                    cancion => String(cancion.id) === select.value
-                );
+                    const select = document.getElementById(`cancion-${i}`);
+                    const cancionSeleccionada = opciones.find(
+                        cancion => String(cancion.id) === select.value
+                    );
 
-                if (cancionSeleccionada) {
-                    artistas = cancionSeleccionada.artistas;
-                    youtube = cancionSeleccionada.youtube_url ?? "";
+                    if (cancionSeleccionada) {
+                        artistas = cancionSeleccionada.artistas;
+                        youtube = cancionSeleccionada.youtube_url;
+                    }
                 }
-            }
 
                 modificarCancion(i, titulo, artistas, youtube);
             });
@@ -419,37 +424,37 @@ async function insertaSemana() {
 
     console.log(body);
 
-/*
-    const { data: data_insertar, error: error_insertar } = await supabase.functions.invoke(
-        "insertar-semana",
-        {
-            body
+    /*
+        const { data: data_insertar, error: error_insertar } = await supabase.functions.invoke(
+            "insertar-semana",
+            {
+                body
+            }
+    
+    
+        );
+    
+        console.log("DATA:", data_insertar);
+        console.log("ERROR:", error_insertar);
+    
+    
+        if (error_insertar) {
+            messageRenderer.showErrorMessage(error_insertar.message);
+            return;
         }
-
-
-    );
-
-    console.log("DATA:", data_insertar);
-    console.log("ERROR:", error_insertar);
-
-
-    if (error_insertar) {
-        messageRenderer.showErrorMessage(error_insertar.message);
-        return;
-    }
-
-    if (!data_insertar.ok) {
-        messageRenderer.showErrorMessage(data_insertar.error);
-        return;
-    }
-
-    messageRenderer.showSuccessMessage(
-        `Semana añadida correctamente.
-        Canciones creadas: ${data_insertar.canciones_creadas},
-        Artistas creados: ${data_insertar.artistas_creados},
-        Relaciones creadas: ${data_insertar.relaciones_insertadas}.`
-    );
-*/
+    
+        if (!data_insertar.ok) {
+            messageRenderer.showErrorMessage(data_insertar.error);
+            return;
+        }
+    
+        messageRenderer.showSuccessMessage(
+            `Semana añadida correctamente.
+            Canciones creadas: ${data_insertar.canciones_creadas},
+            Artistas creados: ${data_insertar.artistas_creados},
+            Relaciones creadas: ${data_insertar.relaciones_insertadas}.`
+        );
+    */
 }
 
 
