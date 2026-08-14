@@ -199,12 +199,17 @@ table {
 }
 
 .tabla-canciones {
-    width: auto;
+    width: max-content;
     table-layout: auto;
+}
+
+.tabla-canciones th,
+.tabla-canciones td {
+    white-space: nowrap;
 }
 
 .tabla-canciones th:first-child,
 .tabla-canciones td:first-child {
     width: 1%;
-    white-space: nowrap;
 }
+
