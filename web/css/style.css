@@ -199,7 +199,7 @@ table {
 }
 
 .tabla-canciones {
-    width: 100%;
+    width: auto;
     table-layout: auto;
 }
 
