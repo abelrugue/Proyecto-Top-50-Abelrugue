@@ -96,7 +96,7 @@ async function buscaArtistas() {
 
         } else {
             html_artistas += `<select class="form-select" id="cancion-${i}">`;
-            for (const cancion of opciones) {
+            for (const cancion of [...opciones].reverse()) {
                 html_artistas += `
                 <option value="${cancion.id}">
                     ${cancion.artistas}
@@ -185,7 +185,7 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                class="form-control mb-2"
                id="artistas-mod-${i}"
                value="${artistasActuales}"
-               placeholder="Artistas separados por ';'">
+               placeholder="Artistas de ${titulo} (separados por ';')">
 
         <input type="url"
                class="form-control mb-2"
@@ -249,7 +249,7 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                 <select class="form-select" id="cancion-${i}">
             `;
 
-            for (const cancion of opciones) {
+            for (const cancion of [...opciones].reverse()) {
                 html_artistas += `
                     <option value="${cancion.id}">
                         ${cancion.artistas}
@@ -282,7 +282,19 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                 if (opciones.length === 1) {
                     artistas = opciones[0].artistas;
                     youtube = opciones[0].youtube_url ?? "";
+
+                } else if (opciones.length > 1) {
+
+                const select = document.getElementById(`cancion-${i}`);
+                const cancionSeleccionada = opciones.find(
+                    cancion => String(cancion.id) === select.value
+                );
+
+                if (cancionSeleccionada) {
+                    artistas = cancionSeleccionada.artistas;
+                    youtube = cancionSeleccionada.youtube_url ?? "";
                 }
+            }
 
                 modificarCancion(i, titulo, artistas, youtube);
             });
@@ -407,7 +419,7 @@ async function insertaSemana() {
 
     console.log(body);
 
-
+/*
     const { data: data_insertar, error: error_insertar } = await supabase.functions.invoke(
         "insertar-semana",
         {
@@ -437,7 +449,7 @@ async function insertaSemana() {
         Artistas creados: ${data_insertar.artistas_creados},
         Relaciones creadas: ${data_insertar.relaciones_insertadas}.`
     );
-
+*/
 }
 
 
