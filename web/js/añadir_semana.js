@@ -150,7 +150,7 @@ async function buscaArtistas() {
             if (opciones.length === 1) {
                 artistas = opciones[0].artistas;
                 youtube = opciones[0].youtube_url ?? "";
-                
+
             } else if (opciones.length > 1) {
 
                 const select = document.getElementById(`cancion-${i}`);
@@ -326,7 +326,7 @@ function guardarModificacion(i) {
         ${artistas.join(", ")}
 
         <button type="button"
-                class="btn btn-outline-secondary btn-sm ms-2"
+                class="btn btn-outline-primary btn-sm ms-2"
                 id="modificar-${i}">
             Modificar
         </button>
