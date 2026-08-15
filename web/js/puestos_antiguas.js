@@ -14,7 +14,11 @@ async function main() {
 
         const params = new URLSearchParams(window.location.search);
 
-        const fecha = params.get("fecha") ?? "2026-07-19";
+        let { data: fecha_ultima, error: error_ultima } = await supabase
+            .from("vista_ultima_fecha")
+            .select("*");
+
+        const fecha = params.get("fecha") ?? fecha_ultima;
 
         document.getElementById("fecha-antigua-input").value = fecha;
 
