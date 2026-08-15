@@ -90,7 +90,7 @@ async function buscaArtistas() {
         } else if (opciones.length === 1) {
             html_artistas += `${opciones[0].artistas} 
                 <button type="button" class="btn btn-outline-primary btn-sm ms-2" id="modificar-${i}">
-                    Modificar
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </button>` ;
 
 
@@ -105,7 +105,7 @@ async function buscaArtistas() {
             }
             html_artistas += `</select>
                 <button type="button" class="btn btn-outline-primary btn-sm ms-2" id="modificar-${i}">
-                    Modificar
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </button>`;
 
         }
@@ -196,13 +196,13 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
         <button type="button"
                 class="btn btn-success btn-sm me-1"
                 id="guardar-mod-${i}">
-            Guardar
+            <i class="fa-solid fa-check"></i>
         </button>
 
         <button type="button"
                 class="btn btn-secondary btn-sm"
                 id="cancelar-mod-${i}">
-            Cancelar
+            <i class="fa-solid fa-xmark"></i>
         </button>
     `;
 
@@ -244,7 +244,7 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                 <button type="button"
                         class="btn btn-outline-primary btn-sm ms-2"
                         id="modificar-${i}">
-                    Modificar
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </button>
             `;
 
@@ -268,7 +268,7 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                 <button type="button"
                         class="btn btn-outline-primary btn-sm mt-2"
                         id="modificar-${i}">
-                    Modificar
+                    <i class="fa-solid fa-pen-to-square"></i>
                 </button>
             `;
         }
@@ -345,7 +345,7 @@ function guardarModificacion(i) {
         <button type="button"
                 class="btn btn-outline-primary btn-sm ms-2"
                 id="modificar-${i}">
-            Modificar
+            <i class="fa-solid fa-pen-to-square"></i>
         </button>
     `;
 
@@ -424,7 +424,7 @@ async function insertaSemana() {
 
     console.log(body);
 
-    /*
+    
         const { data: data_insertar, error: error_insertar } = await supabase.functions.invoke(
             "insertar-semana",
             {
@@ -454,7 +454,7 @@ async function insertaSemana() {
             Artistas creados: ${data_insertar.artistas_creados},
             Relaciones creadas: ${data_insertar.relaciones_insertadas}.`
         );
-    */
+    
 }
 
 
