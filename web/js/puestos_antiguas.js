@@ -16,9 +16,12 @@ async function main() {
 
         let { data: fecha_ultima, error: error_ultima } = await supabase
             .from("vista_ultima_fecha")
-            .select("*");
+            .select("fecha_ultima")
+            .single();
 
-        const fecha = params.get("fecha") ?? fecha_ultima;
+        if (error_ultima) throw error_ultima;
+
+        const fecha = params.get("fecha") ?? fecha_ultima.fecha_ultima;
 
         document.getElementById("fecha-antigua-input").value = fecha;
 
