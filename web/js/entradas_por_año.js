@@ -82,6 +82,8 @@ function asCard(cancion) {
         num1 = `style="background-color: rgb(255, 162, 63);"`;
     } else if (cancion.numeros_1 == 3) {
         num1 = `style="background-color: rgb(255, 60, 60);"`;
+    }else{
+        num1 = `style="background-color: rgb(255, 255, 255);"`;
     }
 
     let html = `
