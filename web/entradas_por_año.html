@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script src="/js/entradas_por_año.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body>
+    <div id="page-header"></div>
+    <div class="container">
+        <div id="errors"></div>
+        <h3 class="text-center" id="title-entradas-de-año">Entradas de 2026</h3>
+        <hr>
+
+
+
+
+        <form id="entradas-año-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="año-entradas-input">Año</label>
+                    <input type="number" class="form-control" id="año-entradas-input" name="año" placeholder="Año" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="submit" id="btn-buscar-año-entradas" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+
+        
+
+        <div class="table-responsive">
+        <table class="table tabla-grande">
+            <tbody id="body-entradas-año"></tbody>
+        </table>
+        </div>
+    </div>
+    
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>
