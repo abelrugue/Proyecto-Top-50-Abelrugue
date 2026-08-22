@@ -85,7 +85,7 @@ function asCard(cancion) {
     }
 
     let html = `
-        <td scope="col" ${num1}><span class="badge rounded-pill ${num1}">${reentrada}${cancion.titulo}</span></td>
+        <td scope="col" ${num1}><span class="badge rounded-pill ${num1} style="color: black;">${reentrada}${cancion.titulo}</span></td>
         `;
 
     return html;
