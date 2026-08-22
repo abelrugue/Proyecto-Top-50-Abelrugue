@@ -57,7 +57,7 @@ async function cargarLista(año) {
     for (let i = 1; i <= 50; i++) {
         html_total += `<tr> <td scope="col">${i}</td>`
         for (let cancion of data) {
-            if (cancion.puesto_entrada = i) {
+            if (cancion.puesto_entrada == i) {
                 html_total += asCard(cancion);
             }
         }
@@ -71,7 +71,7 @@ async function cargarLista(año) {
 function asCard(cancion) {
 
     let reentrada = "";
-    if (cancion.tipo = "Reentrada") {
+    if (cancion.tipo == "Reentrada") {
         reentrada = "(RE) ";
     }
 
