@@ -61,7 +61,7 @@ async function cargarLista(año) {
                 html_total += asCard(cancion);
             }
         }
-        html_total += `<tr>`
+        html_total += `</tr>`
     }
 
     bodyDiv.innerHTML = html_total;

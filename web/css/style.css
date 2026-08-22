@@ -263,20 +263,52 @@ img.photo-user-avatar {
     }
 }
 
+/* Contenedor de la tabla */
 .tabla-canciones-años {
-    table-layout: fixed;
-    width: max-content;
+    width: max-content !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+    border-collapse: collapse;
 }
 
+/* Todas las celdas */
 .tabla-canciones-años td,
 .tabla-canciones-años th {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
-    height: 21px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: clip;
+    box-sizing: border-box;
+
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+
+    height: 21px !important;
+    min-height: 21px !important;
+    max-height: 21px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    line-height: 21px !important;
+
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
+
+    vertical-align: middle;
 }
 
+/* Primera columna: números */
+.tabla-canciones-años td:first-child,
+.tabla-canciones-años th:first-child {
+    width: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+
+    text-align: center;
+}
+
+/* El contenedor es el que hace scroll */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+}
