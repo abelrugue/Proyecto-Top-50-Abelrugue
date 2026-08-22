@@ -263,3 +263,20 @@ img.photo-user-avatar {
     }
 }
 
+.tabla-canciones-años {
+    table-layout: fixed;
+    width: max-content;
+}
+
+.tabla-canciones-años td,
+.tabla-canciones-años th {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    height: 21px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
