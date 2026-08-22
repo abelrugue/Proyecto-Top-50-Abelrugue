@@ -77,17 +77,17 @@ function asCard(cancion) {
 
     let num1 = "";
     if (cancion.numeros_1 == 1) {
-        num1 = `style="background-color: rgb(255, 227, 67);"`;
+        num1 = `rgb(255, 227, 67)`;
     } else if (cancion.numeros_1 == 2) {
-        num1 = `style="background-color: rgb(255, 162, 63);"`;
+        num1 = `rgb(255, 162, 63)`;
     } else if (cancion.numeros_1 == 3) {
-        num1 = `style="background-color: rgb(255, 60, 60);"`;
+        num1 = `rgb(255, 60, 60)`;
     }else{
-        num1 = `style="background-color: rgb(255, 255, 255);"`;
+        num1 = `rgb(255, 255, 255)`;
     }
 
     let html = `
-        <td scope="col"><span class="badge rounded-pill ${num1} style="color: black;">${reentrada}${cancion.titulo}</span></td>
+        <td scope="col"><span class="badge rounded-pill style="background-color: ${num1}; color: black;">${reentrada}${cancion.titulo}</span></td>
         `;
 
     return html;
