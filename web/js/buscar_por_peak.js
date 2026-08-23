@@ -53,7 +53,7 @@ async function asCardGallery(peak) {
     let { data, error } = await supabase
         .from("vista_canciones")
         .select("*")
-        .eq("peak", peak.trim())
+        .eq("peak", peak)
         .order("fecha_peak");
     let html = '';
     for (let cancion of data) {
