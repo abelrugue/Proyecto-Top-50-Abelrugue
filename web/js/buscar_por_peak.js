@@ -17,7 +17,7 @@ async function main() {
 
             const params = new URLSearchParams(window.location.search);
 
-            const peak = params.get("peak") ?? "";
+            const peak = params.get("peak") ?? 1;
 
             document.getElementById("peak-input").value = peak;
 
