@@ -310,13 +310,13 @@ img.photo-user-avatar {
 .table-responsive {
     width: 100%;
     overflow-x: auto !important;
-    overflow-y: hidden;
+    overflow-y: visible;
 }
 
 
-thead {
+thead th {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: white;
+    z-index: 1000;
+    background-color: white;
 }
