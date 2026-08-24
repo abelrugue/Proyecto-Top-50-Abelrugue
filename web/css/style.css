@@ -318,9 +318,10 @@ img.photo-user-avatar {
 
 
 
-.tabla-entradas thead th {
+.tabla-scroll thead th {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: white;
+    border-bottom: 3px solid black !important;
 }
