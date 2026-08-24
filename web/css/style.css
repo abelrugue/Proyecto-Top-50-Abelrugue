@@ -314,7 +314,18 @@ img.photo-user-avatar {
 }
 
 
-thead th {
+.table-responsive thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+}
+
+.tabla-scroll thead th {
     position: sticky;
     top: 0;
     z-index: 1000;
