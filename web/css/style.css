@@ -320,16 +320,14 @@ img.photo-user-avatar {
 .tabla-scroll {
     width: 100%;
     overflow-x: auto;
+    overflow-y: visible !important;
     -webkit-overflow-scrolling: touch;
 }
 
-.tabla-scroll thead {
+.tabla-scroll thead th {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.tabla-scroll thead th {
     background-color: white !important;
     border-bottom: 3px solid black !important;
 }
