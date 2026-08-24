@@ -317,18 +317,45 @@ img.photo-user-avatar {
 
 
 
+/* =========================================
+   TABLAS CON SCROLL HORIZONTAL + CABECERA FIJA
+   ========================================= */
+
 .tabla-scroll {
     width: 100%;
     overflow-x: auto;
-    overflow-y: visible !important;
     -webkit-overflow-scrolling: touch;
 }
 
-.tabla-scroll thead th {
-    position: sticky;
+/* La tabla mantiene su ancho natural */
+.tabla-scroll > table {
+    margin-bottom: 0;
+}
+
+/* Cabecera original */
+.tabla-scroll > table > thead {
+    visibility: visible;
+}
+
+/* Cabecera que JavaScript coloca arriba */
+.tabla-header-fijo {
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 1050;
+    margin: 0 !important;
+    pointer-events: none;
+}
+
+.tabla-header-fijo table {
+    margin: 0 !important;
+    border-collapse: collapse;
+}
+
+.tabla-header-fijo th {
     background-color: white !important;
+    color: black !important;
     border-bottom: 3px solid black !important;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
