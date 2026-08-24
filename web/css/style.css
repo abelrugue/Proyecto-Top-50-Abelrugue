@@ -315,7 +315,7 @@ img.photo-user-avatar {
 }
 */
 
-
+/*
 .tabla-scroll {
     width: 100%;
     overflow-x: auto;
@@ -327,5 +327,29 @@ img.photo-user-avatar {
     top: 0;
     z-index: 1000;
     background-color: white;
+    border-bottom: 3px solid black !important;
+}
+    */
+
+.tabla-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-scroll table {
+    overflow: visible;
+}
+
+.tabla-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.tabla-scroll thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    background-color: white !important;
     border-bottom: 3px solid black !important;
 }
