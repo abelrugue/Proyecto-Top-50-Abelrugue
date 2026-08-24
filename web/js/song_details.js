@@ -76,6 +76,16 @@ function asCard(cancion) {
         repeticion = `x${cancion.numeros_1}`
     }
 
+    let cero5 = cancion.top_5;
+    if (cancion.top_5 == 0) {
+        cero5 = "-";
+    }
+
+    let cero10 = cancion.top_10;
+    if (cancion.top_10 == 0) {
+        cero10 = "-";
+    }
+
     let html = `
             <br>
             <div class="card mb-2 p-1">
@@ -99,16 +109,16 @@ function asCard(cancion) {
                                     <p class="card-text"><b>Sem:</b> <i class="fa-solid fa-calendar"></i> ${cancion.sem}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text"><b>Punt:</b> ${cancion.puntuacion}</p>
+                                    <p class="card-text"><b>Punt:</b> ${Number(cancion.puntuacion).toFixed(3)}</p>
                                 </li>
                                 <li>
                                     <p class="card-text"><b>Recorrido:</b> ${cancion.recorrido}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text"><b>Semanas top 5:</b> ${cancion.top_5}</p>
+                                    <p class="card-text"><b>Semanas top 5:</b> ${cero5}</p>
                                 </li>
                                 <li>
-                                    <p class="card-text"><b>Semanas top 10:</b> ${cancion.top_10}</p>
+                                    <p class="card-text"><b>Semanas top 10:</b> ${cero10}</p>
                                 </li>
                                 <li>
                                     <p class="card-text"><b>Fecha debut:</b> ${cancion.fecha_debut}</p>
@@ -146,16 +156,16 @@ function asCard(cancion) {
                             <p class="card-text">Sem: <i class="fa-solid fa-calendar"></i> ${cancion.sem}</p>
                         </li>
                         <li>
-                            <p class="card-text">Punt: ${cancion.puntuacion}</p>
+                            <p class="card-text">Punt: ${Number(cancion.puntuacion).toFixed(3)}</p>
                         </li>
                         <li>
                             <p class="card-text">Recorrido: ${cancion.recorrido}</p>
                         </li>
                         <li>
-                            <p class="card-text">Semanas top 5: ${cancion.top_5}</p>
+                            <p class="card-text">Semanas top 5: ${cero5}</p>
                         </li>
                         <li>
-                            <p class="card-text">Semanas top 10: ${cancion.top_10}</p>
+                            <p class="card-text">Semanas top 10: ${cero10}</p>
                         </li>
                         <li>
                             <p class="card-text">Fecha debut: ${cancion.fecha_debut}</p>

@@ -21,6 +21,16 @@ const cancionRenderer = {
             repeticion = `x${cancion.numeros_1}`
         }
 
+        let cero5 = cancion.top_5;
+        if (cancion.top_5 == 0){
+            cero5 = "-";
+        }
+
+        let cero10 = cancion.top_10;
+        if (cancion.top_10 == 0){
+            cero10 = "-";
+        }
+
         let html = `<tr ${num1}>
         <td scope="col" class="portada-cell"><img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
          class="rounded portada-img"></td>
@@ -28,9 +38,9 @@ const cancionRenderer = {
 <td scope="col" class="artistas-cell">${cancion.artistas}</td>
 <td scope="col">${cancion.peak}${repeticion}</td>
 <td scope="col">${cancion.sem}</td>
-<td scope="col">${cancion.puntuacion}</td>
-<td scope="col">${cancion.top_5}</td>
-<td scope="col">${cancion.top_10}</td>
+<td scope="col">${Number(cancion.puntuacion).toFixed(3)}</td>
+<td scope="col">${cero5}</td>
+<td scope="col">${cero10}</td>
 <td scope="col">${cancion.fecha_debut}</td>
 <td scope="col">${cancion.fecha_peak}</td>
 
