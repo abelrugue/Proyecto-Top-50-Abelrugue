@@ -310,22 +310,15 @@ img.photo-user-avatar {
 .table-responsive {
     width: 100%;
     overflow-x: auto !important;
-    overflow-y: visible;
+    overflow-y: hidden;
 }
 
 
-.table-responsive thead th {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: white;
-}
 
-.tabla-scroll {
-    overflow-x: auto;
-}
 
-.tabla-scroll thead th {
+
+
+.tabla-entradas thead th {
     position: sticky;
     top: 0;
     z-index: 1000;
