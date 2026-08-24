@@ -323,21 +323,14 @@ img.photo-user-avatar {
     -webkit-overflow-scrolling: touch;
 }
 
-.tabla-scroll table {
-    margin-bottom: 0;
+.tabla-scroll thead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .tabla-scroll thead th {
-    position: sticky;
-    top: 0;
-    z-index: 10;
     background-color: white !important;
     border-bottom: 3px solid black !important;
 }
 
-table thead th {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 9999 !important;
-    background: red !important;
-}
