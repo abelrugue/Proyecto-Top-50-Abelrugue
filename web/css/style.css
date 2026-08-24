@@ -307,15 +307,19 @@ img.photo-user-avatar {
 }
 
 /* El contenedor es el que hace scroll */
+/*
 .table-responsive {
     width: 100%;
     overflow-x: auto !important;
     overflow-y: hidden;
 }
+*/
 
 
-
-
+.tabla-scroll {
+    width: 100%;
+    overflow-x: auto !important;
+}
 
 
 .tabla-scroll thead th {
