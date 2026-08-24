@@ -334,3 +334,10 @@ img.photo-user-avatar {
     background-color: white !important;
     border-bottom: 3px solid black !important;
 }
+
+table thead th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    background: red !important;
+}
