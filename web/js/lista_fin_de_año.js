@@ -18,7 +18,7 @@ async function main() {
 
         if (error_ultima) throw error_ultima;
 
-        const año = params.get("año") ?? fecha_ultima.fecha_ultima.getFullYear();
+        const año = params.get("año") ?? new Date(fecha_ultima.fecha_ultima).getFullYear();
 
         document.getElementById("año-fin-input").value = año;
 
