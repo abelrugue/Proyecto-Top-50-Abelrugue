@@ -98,7 +98,7 @@ const puestoRenderer = {
                 <div class="col-2 col-md-3 d-flex align-items-end">
                     <div class="card-body">
                         <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
-                            <div>
+                            <div class="stat">
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
                                     <p style="white-space: nowrap; ${color_num}"><i class="fa-solid fa-trophy"></i> ${puesto.peak}${repeticion}</p>
@@ -109,7 +109,7 @@ const puestoRenderer = {
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="stat">
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Sem:</p>
                                     <p style="white-space: nowrap;"><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
@@ -120,7 +120,7 @@ const puestoRenderer = {
                                 </div>
                             </div>
 
-                            <div>
+                            <div class="stat">
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Ant:</p>
                                     <p style="white-space: nowrap;"><i class="fa-solid fa-clock"></i> ${posicion_anterior}</p>
@@ -191,8 +191,8 @@ ${puesto.youtube_url}`);
                 </div>
                 <div class="col-2 col-md-3 d-flex align-items-center">
                     <div class="card-body">
-                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
-                            <div>
+                        <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 stats">
+                            <div class="stat">
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Max:</p>
                                     <p style="white-space: nowrap;"><i class="fa-solid fa-trophy"></i> ${salida.peak}${repeticion}</p>
@@ -202,7 +202,7 @@ ${puesto.youtube_url}`);
                                     <p><i class="fa-solid fa-trophy"></i> ${salida.peak}${repeticion}</p>
                                 </div>
                             </div>
-                            <div>
+                            <div class="stat">
                                 <div class="d-none d-sm-block">
                                     <p class="mb-1">Sem:</p>
                                     <p style="white-space: nowrap;"><i class="fa-solid fa-calendar"></i> ${salida.sem}</p>
@@ -211,7 +211,7 @@ ${puesto.youtube_url}`);
                                 <div class="d-block d-sm-none stats">
                                     <p><i class="fa-solid fa-calendar"></i> ${salida.sem}</p>
                                 </div>
-                            </div>
+                            </div class="stat">
                         </div>
                     </div>
                 </div>

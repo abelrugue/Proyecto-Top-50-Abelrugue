@@ -134,7 +134,7 @@ function asCard(puesto, i) {
                     </div>
                     <div class="col-2 col-md-3 d-flex align-items-end">
                         <div class="card-body p-1">
-                            <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 stats">
+                            <div class="d-flex flex-column flex-md-row gap-1 gap-md-2 text-center w-100 stats">
                                 <div class="stat">
                                     <div class="d-none d-sm-block">
                                         <p class="mb-1">Max:</p>
