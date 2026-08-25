@@ -359,3 +359,9 @@ img.photo-user-avatar {
     white-space: nowrap;
 }
 
+.tabla-header-fijo {
+    position: fixed;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+

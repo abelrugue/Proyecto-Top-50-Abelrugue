@@ -75,19 +75,13 @@ function activarCabecerasFijas() {
 
             if (!cabeceraFija) return;
 
-            /*
-             * La cabecera fija empieza exactamente donde empieza
-             * el contenedor de la tabla.
-             */
             const rect = contenedor.getBoundingClientRect();
 
             cabeceraFija.style.left = `${rect.left}px`;
-            cabeceraFija.style.width = `${contenedor.clientWidth}px`;
+            cabeceraFija.style.width = `${rect.width}px`;
+            cabeceraFija.style.maxWidth = `${rect.width}px`;
+            cabeceraFija.style.overflow = "hidden";
 
-            /*
-             * Movemos la tabla de la cabecera fija en sentido contrario
-             * al scroll horizontal.
-             */
             const tablaFija = cabeceraFija.querySelector("table");
 
             tablaFija.style.transform =
