@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
     
-    <script src="/js/puestos_antiguas.js" type="module"></script>
+    <script src="/js/lista_fin_de_año.js" type="module"></script>
     <script src="/js/header.js" type="module"></script>
 </head>
 
@@ -27,31 +27,31 @@
   
 
 
-    <div class="container" id="content_antiguas">
+    <div class="container" id="content_fin_año">
         <div class="row text-center">
             <div class="col-md">
-                <h3 id="title-lista-antigua">Lista Top 50 de Abelrugue</h3>
+                <h3 id="title-lista-fin-año">Lista Fin de Año</h3>
             </div>
             <hr>
         </div>
 
-        <form id="nueva-semana-form">
+        <form id="fin-año-form">
             <div class="row">
                 <div class="col-md mb-3">
-                    <label for="fecha-antigua-input">Fecha</label>
-                    <input type="date" class="form-control" id="fecha-antigua-input" name="fecha" placeholder="Fecha" required>
+                    <label for="año-fin-input">Año</label>
+                    <input type="number" class="form-control" id="año-fin-input" name="año" placeholder="Año" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md text-center">
-                    <button type="button" id="btn-buscar-lista-antigua" class="btn btn-primary">Buscar</button>
+                    <button type="submit" id="btn-buscar-lista-año" class="btn btn-primary">Buscar</button>
                 </div>
             </div>
         </form>
 
         <br>
 
-        <div id="div-lista-antigua"></div>
+        <div id="div-fin-año"></div>
 
         <div id="errors"></div>
     </div>

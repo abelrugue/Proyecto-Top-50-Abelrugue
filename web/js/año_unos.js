@@ -11,7 +11,14 @@ async function main() {
 
         const params = new URLSearchParams(window.location.search);
 
-        const año = params.get("año") ?? 2026;
+        let { data: fecha_ultima, error: error_ultima } = await supabase
+            .from("vista_ultima_fecha")
+            .select("fecha_ultima")
+            .single();
+
+        if (error_ultima) throw error_ultima;
+
+        const año = params.get("año") ?? fecha_ultima.fecha_ultima.getFullYear();
 
         document.getElementById("año-input").value = año;
 
