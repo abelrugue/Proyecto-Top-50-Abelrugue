@@ -118,7 +118,7 @@ function asCard(puesto, i) {
     let html = `
             <div class="card mb-2 p-1" ${num1}>
                 <div class="row g-1 align-items-center m-0">
-                    <div class="col-2 col-md-2 text-center" >
+                    <div class="col-2 col-md-1 text-center" >
                         <h2 class="card-title" >${i}</h2>
                     </div>
                     <div class="col-2 col-md-2">
@@ -132,10 +132,10 @@ function asCard(puesto, i) {
     
                         </div>
                     </div>
-                    <div class="col-2 col-md-3 d-flex align-items-end">
-                        <div class="card-body">
-                            <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
-                                <div>
+                    <div class="col-2 col-md-4 d-flex align-items-end">
+                        <div class="card-body p-1">
+                            <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-center w-100 stats">
+                                <div class="stat">
                                     <div class="d-none d-sm-block">
                                         <p class="mb-1">Max:</p>
                                         <p style="white-space: nowrap;"><i class="fa-solid fa-trophy"></i> ${puesto.peak}${repeticion}</p>
@@ -146,7 +146,7 @@ function asCard(puesto, i) {
                                     </div>
                                 </div>
     
-                                <div>
+                                <div class="stat">
                                     <div class="d-none d-sm-block">
                                         <p class="mb-1">Sem:</p>
                                         <p style="white-space: nowrap;"><i class="fa-solid fa-calendar"></i> ${puesto.sem}</p>
@@ -157,7 +157,7 @@ function asCard(puesto, i) {
                                     </div>
                                 </div>
     
-                                <div>
+                                <div class="stat">
                                     <div class="d-none d-sm-block">
                                         <p class="mb-1">Punt:</p>
                                         <p style="white-space: nowrap;"><i class="fa-solid fa-star"></i> ${Number(puesto.puntuacion).toFixed(3)}</p>

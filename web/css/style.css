@@ -365,3 +365,8 @@ img.photo-user-avatar {
     overflow: hidden;
 }
 
+.stats .stat {
+    flex: 1;
+    text-align: center;
+}
+
