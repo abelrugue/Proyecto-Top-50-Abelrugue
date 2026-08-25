@@ -4,7 +4,7 @@ import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
 async function main() {
     try {
-        document.getElementById("año-unos-form").addEventListener("submit", e => {
+        document.getElementById("fin-año-form").addEventListener("submit", e => {
             e.preventDefault();
             buscar();
         });
