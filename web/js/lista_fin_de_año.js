@@ -2,7 +2,7 @@
 
 import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
-import { parseHTML } from "/js/utils/parseHTML.js";
+
 async function main() {
     try {
         document.getElementById("fin-año-form").addEventListener("submit", e => {
@@ -70,6 +70,33 @@ async function cargarLista(año) {
 
     bodyDiv.innerHTML = html_total;
 
+    const botones = bodyDiv.querySelectorAll("[id^='copiar-']");
+
+    botones.forEach(boton => {
+        const i = Number(boton.id.replace("copiar-", ""));
+        const puesto = data[i - 1];
+
+        boton.addEventListener("click", async () => {
+            try {
+                let repeticion = "";
+
+                if (puesto.numeros_1 > 1) {
+                    repeticion = `x${puesto.numeros_1}`;
+                }
+
+                await navigator.clipboard.writeText(`${i}.‎ ${puesto.titulo.toUpperCase()} - ${puesto.artistas}
+    
+Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem} (Total ${puesto.sem_total})
+Punt. ${Number(puesto.puntuacion).toFixed(3)}
+    
+${puesto.youtube_url}`);
+
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
+
 }
 
 function asCard(puesto, i) {
@@ -91,8 +118,8 @@ function asCard(puesto, i) {
     let html = `
             <div class="card mb-2 p-1" ${num1}>
                 <div class="row g-1 align-items-center m-0">
-                    <div class="col-2 col-md-2 text-center" >
-                        <h1 class="card-title" >${i}</h1>
+                    <div class="col-1 col-md-1 text-center" >
+                        <h2 class="card-title" >${i}</h2>
                     </div>
                     <div class="col-2 col-md-2">
                         <img src="${puesto.portada_url && puesto.portada_url !== 'NO_ENCONTRADA' ? puesto.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
@@ -105,7 +132,7 @@ function asCard(puesto, i) {
     
                         </div>
                     </div>
-                    <div class="col-2 col-md-3 d-flex align-items-end">
+                    <div class="col-3 col-md-4 d-flex align-items-end">
                         <div class="card-body">
                             <div class="d-flex flex-column flex-md-row gap-2 gap-md-4 text-end w-100 stats">
                                 <div>
@@ -133,11 +160,11 @@ function asCard(puesto, i) {
                                 <div>
                                     <div class="d-none d-sm-block">
                                         <p class="mb-1">Punt:</p>
-                                        <p style="white-space: nowrap;"><i class="fa-solid fa-star"></i> ${puesto.puntuacion}</p>
+                                        <p style="white-space: nowrap;"><i class="fa-solid fa-star"></i> ${Number(puesto.puntuacion).toFixed(3)}</p>
                                     </div>
     
                                     <div class="d-block d-sm-none stats">
-                                        <p><i class="fa-solid fa-star"></i> ${puesto.puntuacion}</p>
+                                        <p><i class="fa-solid fa-star"></i> ${Number(puesto.puntuacion).toFixed(3)}</p>
                                     </div>
                                 </div>
                             </div>
@@ -154,23 +181,7 @@ function asCard(puesto, i) {
             </div>
             `;
 
-    let card = parseHTML(html);
-
-    const boton = card.querySelector(`#copiar-${i}`);
-
-    boton.addEventListener("click", async () => {
-        try {
-            await navigator.clipboard.writeText(`${i}.‎ ${puesto.titulo.toUpperCase()} - ${puesto.artistas}
     
-    Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem} (Total ${puesto.sem_total})
-    Punt. ${puesto.puntuacion}
-    
-    ${puesto.youtube_url}`);
-
-        } catch (err) {
-            console.error(err);
-        }
-    });
 
     return html;
 
