@@ -18,7 +18,7 @@ async function main() {
 
         if (error_ultima) throw error_ultima;
 
-        const año = params.get("fecha") ?? fecha_ultima.fecha_ultima;
+        const fecha = params.get("fecha") ?? fecha_ultima.fecha_ultima;
 
         document.getElementById("maquina-input").value = fecha;
 
