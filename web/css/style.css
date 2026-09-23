@@ -198,9 +198,7 @@ img.photo-user-avatar {
         padding: .5rem .9rem;
     }
 
-    .hace-años{
-        font-size: 1.3rem;
-    }
+    
 }
 
 .tabla-canciones {
@@ -374,3 +372,10 @@ img.photo-user-avatar {
     text-align: center;
 }
 
+
+@media (max-width: 767px) {
+    .hace-años {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+}
