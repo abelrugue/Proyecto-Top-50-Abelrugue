@@ -2,6 +2,8 @@
 
 import { supabase } from "./supabase.js";
 import { messageRenderer } from './renderers/messages.js';
+import { parseHTML } from "/js/utils/parseHTML.js";
+
 async function main() {
     try {
         document.getElementById("maquina-form").addEventListener("submit", e => {
