@@ -71,12 +71,13 @@ async function cargarLista(fecha) {
     const bodyDiv = document.getElementById("div-maquina");
 
     let html_total = '';
-    for (let cancion of data_maquina) {
-        html_total += asCard(cancion, "año");
-    }
     for (let cancion of data_maquina_6_meses) {
         html_total += asCard(cancion, "mes");
     }
+    for (let cancion of data_maquina) {
+        html_total += asCard(cancion, "año");
+    }
+    
     // maquina antigua
 
     bodyDiv.innerHTML = html_total;
@@ -91,12 +92,13 @@ function asCard(cancion, tipo) {
 
     let repeticion="";
     if(tipo=="año"){
-        hace = `${cancion.hace_años} años`;
         span = `<span class="badge rounded-pill bg-success semana-badge">${new Date(cancion.fecha).getFullYear()}</span>`;
         if(cancion.hace_años==1){
             cifra_y_tiempo = `${emoji} AÑO`;
+            hace = `${cancion.hace_años} año`;
         }else{
             cifra_y_tiempo = `${emoji} AÑOS`;
+            hace = `${cancion.hace_años} años`;
         }
     }
 
@@ -123,10 +125,10 @@ function asCard(cancion, tipo) {
 
                     </div>
                 </div>
-                    <div class="col-2 col-md-2 d-flex align-items-center justify-content-center">                       
+                <div class="col-2 col-md-2 d-flex align-items-center justify-content-center">                       
                         ${span} 
-                    </div>
                 </div>
+                
                 <div class="col-1 col-md-1 d-flex align-items-center justify-content-center">
                     <button class="btn btn-sm btn-outline-secondary" id="copiar-${cancion.fecha}">
                         <i class="fa-regular fa-copy" style="color: rgb(132, 132, 132);"></i>
