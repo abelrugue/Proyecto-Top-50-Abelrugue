@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EL TOP 50 DE ABELRUGUE</title>
+    <link rel="icon" href="/images/top50.ico">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/js/utils/include.js"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+    
+    <script src="/js/maquina_del_tiempo.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+</head>
+
+<body class="light">
+  
+    <div id="page-header"></div>
+
+  
+
+
+    <div class="container" id="maquina">
+        <div class="row text-center">
+            <div class="col-md">
+                <h3 id="title-maquina">Máquina del tiempo</h3>
+            </div>
+            <hr>
+        </div>
+
+        <form id="maquina-form">
+            <div class="row">
+                <div class="col-md mb-3">
+                    <label for="maquina-input">Fecha</label>
+                    <input type="date" class="form-control" id="maquina-input" name="fecha" placeholder="Fecha" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md text-center">
+                    <button type="submit" id="btn-buscar-maquina" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+        <div id="div-maquina"></div>
+
+        <div id="errors"></div>
+    </div>
+
+
+    <script>include("header.html", "#page-header")</script>
+
+</body>
+
+</html>
