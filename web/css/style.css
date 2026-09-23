@@ -196,6 +196,10 @@ img.photo-user-avatar {
         font-size: 1.3rem;
         padding: .5rem .9rem;
     }
+
+    .hace-años{
+        font-size: 1.3rem;
+    }
 }
 
 .tabla-canciones {

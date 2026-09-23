@@ -156,7 +156,7 @@ function asCard(cancion, tipo) {
         <div class="card mb-2 p-1">
             <div class="row g-1 align-items-center m-0">
                 <div class="col-2 col-md-2 text-center" >
-                    <h5 class="mb-0" >${hace}</h5>
+                    <h5 class="mb-0 hace-años" >${hace}</h5>
                 </div>
                 <div class="col-2 col-md-2">
                     <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
