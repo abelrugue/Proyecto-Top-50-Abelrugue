@@ -77,10 +77,54 @@ async function cargarLista(fecha) {
     for (let cancion of data_maquina) {
         html_total += asCard(cancion, "año");
     }
-    
+
     // maquina antigua
 
     bodyDiv.innerHTML = html_total;
+
+    const botones = bodyDiv.querySelectorAll("[id^='copiar-']");
+
+    botones.forEach(boton => {
+        const fecha = boton.id.replace("copiar-", "");
+        const cancion = [...data_maquina_6_meses, ...data_maquina]
+            .find(c => c.fecha === fecha);
+
+        if (!cancion) return;
+
+        const tipo = cancion.hace_años !== undefined ? "año" : "mes";
+
+        let cifra_y_tiempo = "6️⃣ MESES";
+
+        if (tipo === "año") {
+            const emojis = [
+                "", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣",
+                "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟",
+                "1️⃣1️⃣", "1️⃣2️⃣", "1️⃣3️⃣", "1️⃣4️⃣",
+                "1️⃣5️⃣", "1️⃣6️⃣", "1️⃣7️⃣", "1️⃣8️⃣",
+                "1️⃣9️⃣", "2️⃣0️⃣"
+            ];
+
+            const emoji = emojis[cancion.hace_años] ?? cancion.hace_años;
+            cifra_y_tiempo = `${emoji} ${cancion.hace_años === 1 ? "AÑO" : "AÑOS"}`;
+        }
+
+        let repeticion = "";
+        if (cancion.numeros_1_total > 1) {
+            repeticion = `(${cancion.numeros_1_parcial}/${cancion.numeros_1_total})`;
+        }
+
+        boton.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(`HACE ${cifra_y_tiempo}
+
+🕓 ${cancion.titulo.toUpperCase()} (${cancion.artistas}) ${repeticion}
+
+${cancion.youtube_url}`);
+            } catch (err) {
+                console.error(err);
+            }
+        });
+    });
 
 }
 
@@ -90,19 +134,19 @@ function asCard(cancion, tipo) {
     let cifra_y_tiempo = "6️⃣ MESES";
     const emoji = cancion.hace_años <= 20 ? ["", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟", "1️⃣1️⃣", "1️⃣2️⃣", "1️⃣3️⃣", "1️⃣4️⃣", "1️⃣5️⃣", "1️⃣6️⃣", "1️⃣7️⃣", "1️⃣8️⃣", "1️⃣9️⃣", "2️⃣0️⃣"][cancion.hace_años] : cancion.hace_años;
 
-    let repeticion="";
-    if(tipo=="año"){
+    let repeticion = "";
+    if (tipo == "año") {
         span = `<span class="badge rounded-pill bg-success semana-badge">${new Date(cancion.fecha).getFullYear()}</span>`;
-        if(cancion.hace_años==1){
+        if (cancion.hace_años == 1) {
             cifra_y_tiempo = `${emoji} AÑO`;
             hace = `${cancion.hace_años} año`;
-        }else{
+        } else {
             cifra_y_tiempo = `${emoji} AÑOS`;
             hace = `${cancion.hace_años} años`;
         }
     }
 
-    if(cancion.numeros_1_total>1){
+    if (cancion.numeros_1_total > 1) {
         repeticion = `(${cancion.numeros_1_parcial}/${cancion.numeros_1_total})`;
 
     }
@@ -111,14 +155,14 @@ function asCard(cancion, tipo) {
     let html = `
         <div class="card mb-2 p-1">
             <div class="row g-1 align-items-center m-0">
-                <div class="col-3 col-md-3 text-center" >
-                    <h3 class="mb-0" >${hace}</h3>
+                <div class="col-2 col-md-2 text-center" >
+                    <h5 class="mb-0" >${hace}</h5>
                 </div>
                 <div class="col-2 col-md-2">
                     <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"
                     class="img-fluid rounded w-100 h-100 object-fit-cover">
                 </div>
-                <div class="col-4 col-md-4 d-flex align-items-center">
+                <div class="col-5 col-md-5 d-flex align-items-center">
                     <div class="card-body">
                         <h3 class="card-title">${cancion.titulo}</h3>
                         <p class="card-text">${cancion.artistas}</p>
@@ -140,22 +184,7 @@ function asCard(cancion, tipo) {
         </div>
         `;
 
-        let card = parseHTML(html);
-        
-                const boton = card.querySelector(`#copiar-${cancion.fecha}`);
-        
-                boton.addEventListener("click", async () => {
-                    try {
-                        await navigator.clipboard.writeText(`HACE ${cifra_y_tiempo}
-        
-        🕓 ${cancion.titulo.toUpperCase()} (${cancion.artistas}) ${repeticion}
-        
-        ${cancion.youtube_url}`);
-        
-                    } catch (err) {
-                        console.error(err);
-                    }
-                });
+    
 
     return html;
 
