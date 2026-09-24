@@ -375,7 +375,22 @@ img.photo-user-avatar {
 
 @media (max-width: 767px) {
     .hace-años {
-        font-size: 1rem;
+        font-size: 0.8rem;
         white-space: nowrap;
+    }
+
+    .años-uno-fecha {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+}
+
+.fecha-titulo {
+    display: inline;
+}
+
+@media (max-width: 767px) {
+    .fecha-titulo {
+        display: block;
     }
 }

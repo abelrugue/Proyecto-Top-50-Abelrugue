@@ -50,7 +50,7 @@ function buscar() {
 
 async function cargarLista(fecha) {
 
-    document.getElementById("title-maquina").innerHTML = `Máquina del tiempo del ${fecha}`;
+    document.getElementById("title-maquina").innerHTML = `Máquina del tiempo del <span class="fecha-titulo">${fecha}</span>`;
 
     let { data: data_maquina, error: error_maquina } = await supabase
         .rpc("vista_maquina_años", {

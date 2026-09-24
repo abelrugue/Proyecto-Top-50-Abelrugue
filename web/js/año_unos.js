@@ -78,7 +78,7 @@ function asCard(cancion) {
         <div class="card mb-2 p-1">
             <div class="row g-1 align-items-center m-0">
                 <div class="col-2 col-md-2 text-center" >
-                    <h3 class="mb-0" >${fechaFinal}</h3>
+                    <h3 class="mb-0 años-uno-fecha" >${fechaFinal}</h3>
                 </div>
                 <div class="col-2 col-md-2">
                     <img src="${cancion.portada_url && cancion.portada_url !== 'NO_ENCONTRADA' ? cancion.portada_url : 'https://quinpart.com/imgs/placeholder.svg'}"

@@ -85,7 +85,8 @@ async function cargarLista(fecha) {
     const lista = document.getElementById("div-lista-antigua");
     lista.replaceChildren();
     lista.appendChild(galleryRenderer.asCardGallery(data, hitos, rdps, salidas));
-    document.getElementById("title-lista-antigua").innerHTML = `Lista Top 50 de Abelrugue del ${fecha}`;
+    document.getElementById("title-lista-antigua").innerHTML = `Lista Top 50 de Abelrugue del <span class="fecha-titulo">${fecha}</span>`;
+    
 }
 
 document.addEventListener("DOMContentLoaded", main);
