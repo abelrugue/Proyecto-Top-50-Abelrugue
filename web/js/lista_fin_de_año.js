@@ -79,15 +79,19 @@ async function cargarLista(año) {
         boton.addEventListener("click", async () => {
             try {
                 let repeticion = "";
-
                 if (puesto.numeros_1 > 1) {
                     repeticion = `x${puesto.numeros_1}`;
                 }
 
+                let total = "";
+                if(puesto.sem_total > puesto.sem){
+                    total = `(Total ${puesto.sem_total})`;
+                }
+
                 await navigator.clipboard.writeText(`${i}.‎ ${puesto.titulo.toUpperCase()} - ${puesto.artistas}
     
-Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem} (Total ${puesto.sem_total})
-Punt. ${Number(puesto.puntuacion).toFixed(3)}
+Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem} ${total}
+Punt. ${Number(puesto.puntuacion).toFixed(3).replace(".",",")}
     
 ${puesto.youtube_url}`);
 

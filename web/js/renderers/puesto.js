@@ -148,9 +148,12 @@ const puestoRenderer = {
 
         const boton = card.querySelector(`#copiar-${puesto.posicion}`);
 
+        let titulo_mensaje = puesto.titulo=="2026" ? "20‎26" : puesto.titulo;
+        let artistas_mensaje = puesto.artistas=="Yeico, 0723, Caché" ? "Yeico, 07‎23, Caché" : puesto.artistas;
+
         boton.addEventListener("click", async () => {
             try {
-                await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${hito_rdp_mensaje}${hito_mensaje}${puesto.titulo.toUpperCase()} (${mas}${variacion_mensajes}) ${puesto.artistas}
+                await navigator.clipboard.writeText(`${puesto.posicion}.‎ ${hito_rdp_mensaje}${hito_mensaje}${titulo_mensaje.toUpperCase()} (${mas}${variacion_mensajes}) ${artistas_mensaje}
 
 Max. ${puesto.peak}${repeticion}, Sem. ${puesto.sem}
 

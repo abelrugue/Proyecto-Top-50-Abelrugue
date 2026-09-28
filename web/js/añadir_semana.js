@@ -84,7 +84,8 @@ async function buscaArtistas() {
 
         if (opciones.length === 0) {
             html_artistas += `<input type="text" class="form-control mb-2" id="artistas-${i}" placeholder="Artistas de ${titulo} (separados por ';')" required>
-                            <input type="url" class="form-control" id="youtube-${i}" placeholder="https://youtu.be/..." required>`
+                            <input type="url" class="form-control mb-2" id="youtube-${i}" placeholder="https://youtu.be/..." required>
+                            <input type="url" class="form-control" id="portada-${i}" placeholder="https://i.scdn.co/image/..." required>`
 
 
         } else if (opciones.length === 1) {
@@ -146,10 +147,12 @@ async function buscaArtistas() {
 
             let artistas = "";
             let youtube = "";
+            let portada = "";
 
             if (opciones.length === 1) {
                 artistas = opciones[0].artistas;
                 youtube = opciones[0].youtube_url;
+                portada = opciones[0].portada_url;
 
             } else if (opciones.length > 1) {
 
@@ -161,10 +164,11 @@ async function buscaArtistas() {
                 if (cancionSeleccionada) {
                     artistas = cancionSeleccionada.artistas;
                     youtube = cancionSeleccionada.youtube_url;
+                    portada = cancionSeleccionada.portada_url;
                 }
             }
 
-            modificarCancion(i, titulo, artistas, youtube);
+            modificarCancion(i, titulo, artistas, youtube, portada);
         });
     });
 
@@ -176,7 +180,7 @@ async function buscaArtistas() {
 
 }
 
-function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") {
+function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "", portadaActual = "") {
 
     const celda = document.getElementById(`artistas-cell-${i}`);
 
@@ -192,6 +196,12 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                id="youtube-mod-${i}"
                value="${youtubeActual}"
                placeholder="https://youtu.be/...">
+
+        <input type="url"
+               class="form-control mb-2"
+               id="portada-mod-${i}"
+               value="${portadaActual}"
+               placeholder="https://i.scdn.co/image/...">
 
         <button type="button"
                 class="btn btn-success btn-sm me-1"
@@ -234,6 +244,12 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                        class="form-control"
                        id="youtube-${i}"
                        placeholder="https://youtu.be/..."
+                       required>
+
+                <input type="url"
+                       class="form-control"
+                       id="portada-${i}"
+                       placeholder="https://i.scdn.co/image/..."
                        required>
             `;
 
@@ -283,10 +299,12 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
 
                 let artistas = "";
                 let youtube = "";
+                let portada = "";
 
                 if (opciones.length === 1) {
                     artistas = opciones[0].artistas;
                     youtube = opciones[0].youtube_url;
+                    portada = opciones[0].portada_url;
 
                 } else if (opciones.length > 1) {
 
@@ -298,10 +316,11 @@ function modificarCancion(i, titulo, artistasActuales = "", youtubeActual = "") 
                     if (cancionSeleccionada) {
                         artistas = cancionSeleccionada.artistas;
                         youtube = cancionSeleccionada.youtube_url;
+                        portada = cancionSeleccionada.portada_url;
                     }
                 }
 
-                modificarCancion(i, titulo, artistas, youtube);
+                modificarCancion(i, titulo, artistas, youtube, portada);
             });
         }
     });
@@ -311,6 +330,7 @@ function guardarModificacion(i) {
 
     const artistasInput = document.getElementById(`artistas-mod-${i}`);
     const youtubeInput = document.getElementById(`youtube-mod-${i}`);
+    const portadaInput = document.getElementById(`portada-mod-${i}`);
 
     const artistas = artistasInput.value
         .split(";")
@@ -318,6 +338,7 @@ function guardarModificacion(i) {
         .filter(Boolean);
 
     const youtube_url = youtubeInput.value.trim();
+    const portada_url = portadaInput.value.trim();
 
     if (artistas.length === 0) {
         alert("Debes introducir al menos un artista.");
@@ -334,7 +355,8 @@ function guardarModificacion(i) {
     window.cancionesModificadas[i] = {
         titulo: fila,
         artistas,
-        youtube_url
+        youtube_url,
+        portada_url
     };
 
     const celda = document.getElementById(`artistas-cell-${i}`);
@@ -354,7 +376,8 @@ function guardarModificacion(i) {
             i,
             fila,
             artistas.join("; "),
-            youtube_url
+            youtube_url,
+            portada_url
         );
     });
 }
@@ -377,7 +400,8 @@ async function insertaSemana() {
                 posicion: i + 1,
                 titulo: modificada.titulo,
                 artistas: modificada.artistas,
-                youtube_url: modificada.youtube_url
+                youtube_url: modificada.youtube_url,
+                portada_url: modificada.portada_url
             });
 
             continue;
@@ -388,11 +412,13 @@ async function insertaSemana() {
 
             let id_artistas_i = document.getElementById(`artistas-${i + 1}`);
             let id_youtube_i = document.getElementById(`youtube-${i + 1}`);
+            let id_portada_i = document.getElementById(`portada-${i + 1}`);
             puestos_lista.push({
                 posicion: i + 1,
                 titulo: titulo,
                 artistas: id_artistas_i.value.trim().split(";").map(l => l.trim()).filter(Boolean),
-                youtube_url: id_youtube_i.value.trim()
+                youtube_url: id_youtube_i.value.trim(),
+                portada_url: id_portada_i.value.trim()
             });
 
         } else if (opciones.length === 1) {
