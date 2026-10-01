@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>EL TOP 50 DE ABELRUGUE</title>
     <link rel="icon" href="/images/top50.ico">
     <link rel="stylesheet" href="/css/style.css">
@@ -12,28 +12,46 @@
     <script src="/js/utils/include.js"></script>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
-    
+
     <script src="/js/puestos.js" type="module"></script>
     <script src="/js/header.js" type="module"></script>
+    <script src="/js/lista_botones.js" type="module"></script>
 </head>
 
 <body class="light">
-  
+
     <div id="page-header"></div>
 
-  
 
 
-    <div class="container" id="content">
+
+    <div class="container"> <!-- he quitado id="content"-->
         <div class="row text-center">
             <div class="col-md">
-                <h3>Lista Top 50 de Abelrugue</h3>
+                <h3 id="titulo-index">Lista Top 50 de Abelrugue</h3>
             </div>
-            <hr>
         </div>
+        <hr>
+        <div class="row text-center botones-menu">
+            <div class="col text-center">
+                <button type="button" id="btn-lista-top50" class="btn btn-primary">Lista Top 50</button>
+            </div>
+            <div class="col text-center">
+                <button type="button" id="btn-mayores-subidas" class="btn btn-primary">Mayores subidas</button>
+            </div>
+            <div class="col text-center">
+                <button type="button" id="btn-semanas-en-lista" class="btn btn-primary">Semanas en lista</button>
+            </div>
+        </div>
+        <br>
+        
+
+
+
+        <div id="content"></div>
 
         <div id="errors"></div>
     </div>

@@ -394,3 +394,60 @@ img.photo-user-avatar {
         display: block;
     }
 }
+
+@media (max-width: 767px) {
+    #btn-lista-top50,
+    #btn-mayores-subidas,
+    #btn-semanas-en-lista {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.4rem;
+    }
+}
+/*
+@media (max-width: 767px) {
+    .botones-menu {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .botones-menu > .col {
+        flex: 0 0 33.333333% !important;
+        width: 33.333333% !important;
+        max-width: 33.333333% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .botones-menu .btn {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0.7rem;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+   
+}
+*/
+@media (max-width: 767px) {
+    .botones-menu {
+        gap: 3px;
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .botones-menu > .col {
+        padding: 0;
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .botones-menu .btn {
+        width: 100%;
+        white-space: nowrap;
+        font-size: 0.7rem;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
