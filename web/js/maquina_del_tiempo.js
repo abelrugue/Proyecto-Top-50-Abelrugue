@@ -62,11 +62,17 @@ async function cargarLista(fecha) {
             fecha_consulta: fecha
         });
 
+    let { data: data_maquina_antigua, error: error_maquina_antigua } = await supabase
+        .rpc("vista_maquina_años_antiguas", {
+            fecha_consulta: fecha
+        });
 
-    // maquina antigua
 
     if (error_maquina) throw error_maquina;
     if (error_maquina_6_meses) throw error_maquina_6_meses;
+    if (error_maquina_antigua) throw error_maquina_antigua;
+
+
 
     const bodyDiv = document.getElementById("div-maquina");
 
@@ -77,8 +83,13 @@ async function cargarLista(fecha) {
     for (let cancion of data_maquina) {
         html_total += asCard(cancion, "año");
     }
+    for (let cancion of data_maquina_antigua) {
+        html_total += asCard(cancion, "año");
+    }
 
-    // maquina antigua
+
+
+
 
     bodyDiv.innerHTML = html_total;
 
@@ -86,7 +97,7 @@ async function cargarLista(fecha) {
 
     botones.forEach(boton => {
         const fecha = boton.id.replace("copiar-", "");
-        const cancion = [...data_maquina_6_meses, ...data_maquina]
+        const cancion = [...data_maquina_6_meses, ...data_maquina, ...data_maquina_antigua]
             .find(c => c.fecha === fecha);
 
         if (!cancion) return;
@@ -184,7 +195,7 @@ function asCard(cancion, tipo) {
         </div>
         `;
 
-    
+
 
     return html;
 

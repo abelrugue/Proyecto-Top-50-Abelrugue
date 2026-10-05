@@ -431,7 +431,7 @@ img.photo-user-avatar {
 */
 @media (max-width: 767px) {
     .botones-menu {
-        gap: 3px;
+        gap: 4px;
         margin-left: 2px !important;
         margin-right: 2px !important;
     }
